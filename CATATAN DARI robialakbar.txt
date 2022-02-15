@@ -1,0 +1,19 @@
+robialakbar Kuris & Logistik
+
+PHP versi 5.6
+
+Setting Database : 
+1. kurlog\deprixa\database.php
+2. kurlog\deprixa\database-settings.php
+
+admin :
+ADMINISTRATOR
+09731
+
+Pegawai :
+KARYAWAN
+09731
+
+user :
+user@gmail.com
+123456
