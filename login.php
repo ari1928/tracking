@@ -42,7 +42,7 @@ require_once('deprixa/library.php');
             <header class="mpdHeader">
                 <a href='index.html' class="mpd-logo" tabindex="-1">
                     <div><span class=""></span></div>
-                    <div class="mpd-logo-text"><img src="deprixa/images/logo3.png" /></div>
+                    <div class="mpd-logo-text"><img src="deprixa/images/citra-logo.png"width="200%"/></div>
                 </a><!-- logo -->
 
                 <div class="login-status">

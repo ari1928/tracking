@@ -19,7 +19,7 @@ isUser();
     <meta name="author" content="">
 
     <!-- App Favicon -->
-    <link rel="shortcut icon" href="images/logo_CMT.png">
+    <link rel="shortcut icon" href="../images/logo_CMT.png">
 
     <!-- App title -->
     <title></title>
@@ -71,8 +71,8 @@ isUser();
 
                 <!-- LOGO -->
                 <div class="topbar-left">
-                    <a href="admin.php" class="logo">
-                        <span><img src="../image_logo.php?id=1"></span>
+                    <a href="" class="logo">
+                        <span><img src="../images/citra-logo.png"width="23%"></span>
                     </a>
                 </div>
                 <!-- End Logo container-->

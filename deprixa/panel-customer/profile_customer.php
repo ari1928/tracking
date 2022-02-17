@@ -26,7 +26,7 @@ isUser();
 	<link rel="shortcut icon" href="assets/images/favicon.ico">
 
 	<!-- App title -->
-	<title>robialakbar Kuris & Logistik</title>
+	<title>PT.CITRA MANDIRI TRANS GROUP</title>
 	
 	<!-- Switchery css -->
 	<link href="assets/plugins/switchery/switchery.min.css" rel="stylesheet" />

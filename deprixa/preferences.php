@@ -218,8 +218,8 @@ $qrole = $_SESSION['user_type'];
 															<br><br>
 														<div class="row">									
 															<div class="col-sm-6 form-group">
-																<label for="currentPassword">Penampakan Logo </label></br>
-																<img src="image_logo.php?id=1"/>
+																<label for="currentPassword"> </label></br>
+																<img src=""/>
 																
 
 															</div>

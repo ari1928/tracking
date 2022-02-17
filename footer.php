@@ -4,7 +4,7 @@
     <div><br><br></div>
 
     <div class="footer-block col-md-3 col-sm-3 cf">
-      <div class="mpd-logo-text"><img src="deprixa/images/logo3.png"/></div>  
+      <div class="mpd-logo-text"><img src="deprixa/images/citra-logo.png"width="80%"/></div>  
     </div>
 
     <div class="footer-block col-md-3 col-sm-3 sm">

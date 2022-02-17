@@ -6,7 +6,7 @@ session_start();
 require_once('../library.php');
 require_once('../database.php');
 $qname = $_SESSION['user_name'];
-echo $qname;
+ 
 if (isset($_POST['cons'])) {
 	$cons = $_POST['cons'];
 	$result1 =  mysql_query("SELECT * FROM courier_online where s_add='$qname' AND cons_no='$cons' ");

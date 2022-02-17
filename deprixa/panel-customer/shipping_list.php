@@ -169,7 +169,7 @@ isUser();
                                         <td><?php echo $row["pod"]; ?></td>
                                         <td><?php echo $row["pick_date"]; ?></td>
                                         <td><?php echo $row["schedule"]; ?></td>
-                                        <td><span class="label <?php echo $row['status']; ?> label-large"><?php echo $row['status']; ?></span></td>
+                                        <td><span class="label <?php echo $row['status']; ?> label-large label-success"><?php echo $row['status']; ?></span></td>
                                 </tr>
                             <?php } ?>
 
