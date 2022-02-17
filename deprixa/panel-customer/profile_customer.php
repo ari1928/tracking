@@ -104,7 +104,7 @@ isUser();
 														</div>									
 														<div class="col-sm-4 form-group">
 															<label  class="control-label"><i class="fa fa-key icon text-default-lter"></i>&nbsp;Ubah Password</label>
-															<input type="text" class="form-control" id="currentPassword" name="password" value="<?php echo $password; ?>"> 
+															<input type="password" class="form-control" id="currentPassword" name="password" value="<?php echo $password; ?>"> 
 														</div>																	
 													</div>													
 												</fieldset>

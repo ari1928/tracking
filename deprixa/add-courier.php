@@ -80,7 +80,7 @@ $company = mysql_fetch_array(mysql_query("SELECT * FROM company"));
 
 								<!-- START Checkout form -->
 
-								<form action="process.php?action=add-cons" name="formulario" method="post">
+								<form action="process.php?action=add-cons" name="formulario" method="post" enctype="multipart/form-data">
 									<table border="0" align="center" width="100%">
 										<div class="row">
 
@@ -293,6 +293,31 @@ $company = mysql_fetch_array(mysql_query("SELECT * FROM company"));
 															</div><!-- input-group -->
 														</div>
 													</div>
+
+													<div class="col-sm-4 form-group">
+														<label for="dtp_input1" class="text-success"><i class="fa fa-file icon text-default-lter"></i>&nbsp;UPLOAD LAMPIRAN (pdf) min 100kb Max 10mb</i> <span class="required-field">*</span></label>
+														<div>
+															<div class="input-group">
+																<input type="file" class="form-control" name="lampiran1" required>
+															</div><!-- input-group -->
+														</div>
+													</div>
+													<div class="col-sm-4 form-group">
+														<label for="dtp_input1" class="text-success"><i class="fa fa-file icon text-default-lter"></i>&nbsp;UPLOAD LAMPIRAN (pdf) min 100kb Max 10mb</i> <span class="required-field">*</span></label>
+														<div>
+															<div class="input-group">
+																<input type="file" class="form-control" name="lampiran2" required>
+															</div><!-- input-group -->
+														</div>
+													</div>
+													<div class="col-sm-4 form-group">
+														<label for="dtp_input1" class="text-success"><i class="fa fa-file icon text-default-lter"></i>&nbsp;UPLOAD LAMPIRAN (pdf) min 100kb Max 10mb</i> <span class="required-field">*</span></label>
+														<div>
+															<div class="input-group">
+																<input type="file" class="form-control" name="lampiran3" required>
+															</div><!-- input-group -->
+														</div>
+													</div>
 												</div>
 
 											</fieldset>
@@ -358,6 +383,16 @@ $company = mysql_fetch_array(mysql_query("SELECT * FROM company"));
 		}
 	</script>
 
+	<script>
+		$("input[type='file']").on("change", function() {
+			var validExtensions = ["pdf", "PDF"];
+			var file = $(this).val().split('.').pop();
+			if (this.files[0].size > 10000000 || this.files[0].size < 100000 || validExtensions.indexOf(file) == -1) {
+				alert('Ukuran size foto Min 100kb dan Max 10Mb!');
+				$(this).val(null);
+			}
+		});
+	</script>
 
 
 

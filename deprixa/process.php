@@ -162,8 +162,22 @@ function addCons()
 	$connecting_vessel = $_POST['connecting_vessel'];
 	$container_seal = $_POST['container_seal'];
 
+	// UPLOAD LAMPIRAN
+	$lampiran1 = time() . '-' . $_FILES['lampiran1']['name'];
+	$temp1 = $_FILES['lampiran1']['tmp_name'];
+	$path1 = '../upload/lampiran/' . $lampiran1;
+	move_uploaded_file($temp1, $path);
+	$lampiran2 = time() . '-' . $_FILES['lampiran2']['name'];
+	$temp2 = $_FILES['lampiran2']['tmp_name'];
+	$path2 = '../upload/lampiran/' . $lampiran2;
+	move_uploaded_file($temp2, $path2);
+	$lampiran3 = time() . '-' . $_FILES['lampiran3']['name'];
+	$temp3 = $_FILES['lampiran3']['tmp_name'];
+	$path3 = '../upload/lampiran/' . $lampiran3;
+	move_uploaded_file($temp3, $path3);
+
 	$sql = "INSERT INTO courier (cons_no, ship_name, phone, s_add, cc, rev_name, r_phone, r_add, cc_r, email, type, weight, variable, shipping_subtotal, invice_no, qty, book_mode, freight, declarate, mode, pick_date, schedule, pick_time, status, comments,book_date,status_delivered, officename, user,
-	hbl,shipment_type,pol,transit_port,transit_time,pod,vessel_voyage,connecting_vessel,container_seal)
+	hbl,shipment_type,pol,transit_port,transit_time,pod,vessel_voyage,connecting_vessel,container_seal,lampiran1,lampiran2,lampiran3)
 			VALUES('$ConsignmentNo', '$Shippername','$Shipperphone', '$Shipperaddress', '$Shippercc', '$Receivername','$Receiverphone','$Receiveraddress', '$Receivercc_r', '$Receiveremail', '$Shiptype','$Weight' , '$variable', '$shipping_subtotal', '$Invoiceno', '$Qnty', '$Bookingmode', '$Totalfreight',  '$Totaldeclarate', '$Mode', '$Packupdate', '$Schedule', '$Pickuptime', '$status', '$Comments', curdate(),'OTW', '$officename',
 			 '$user',
 			 '$hbl',
@@ -174,7 +188,10 @@ function addCons()
 			 '$pod',
 			 '$vessel_voyage',
 			 '$connecting_vessel',
-			 '$container_seal')";
+			 '$container_seal',
+			 '$lampiran1',
+			 '$lampiran2',
+			 '$lampiran3')";
 	//echo $sql;
 	dbQuery($sql);
 

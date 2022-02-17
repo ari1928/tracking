@@ -80,110 +80,154 @@ if ($no == 1) {
 		</head>
 
 		<!-- Menu -->
+
 		<body>
-    <div id="container">
-<div class="fw mpHeader slide">
-<header class="mpdHeader">
-<a href='index.html' class="mpd-logo" tabindex="-1">
-    <div><span class=""></span></div>
-    <div class="mpd-logo-text"><img src="deprixa/images/logo3.png"/></div>
-</a><!-- logo -->
+			<div id="container">
+				<div class="fw mpHeader slide">
+					<header class="mpdHeader">
+						<a href='index.html' class="mpd-logo" tabindex="-1">
+							<div><span class=""></span></div>
+							<div class="mpd-logo-text"><img src="deprixa/images/logo3.png" /></div>
+						</a><!-- logo -->
 
 
-<!-- Nav -->
-<nav class="mpdNavigation">
-    <div class="mobile-menu-header">Menu</div>
-    <ul>
-		<li class="index.html"><a href="index.html" class="MainNav" data-gacat="index" data-galab="GetAQuote" tabindex="-1">Home</a></li>
-        <li class="deskHide last-mob-link"><a href="javascript:void(0)" class="cl   ose-mob-menu fl pad-top-10">Close &raquo;</a></li>
-    </ul>
-</nav>
+						<!-- Nav -->
+						<nav class="mpdNavigation">
+							<div class="mobile-menu-header">Menu</div>
+							<ul>
+								<li class="index.html"><a href="index.html" class="MainNav" data-gacat="index" data-galab="GetAQuote" tabindex="-1">Home</a></li>
+								<li class="deskHide last-mob-link"><a href="javascript:void(0)" class="cl   ose-mob-menu fl pad-top-10">Close &raquo;</a></li>
+							</ul>
+						</nav>
 
-</header>
-</div>
-		<!-- /Menu -->
-
-		<div class="slide">
-		</div>
-		<main class="slide">
-			<div class="fw">
-				<section class="title">
-					<header>
-						<h1><img src="deprixa_components/images/global/tracking-search.png" />TRACKING SHIPMENT</h1>
 					</header>
-					<div class="media-left">
+				</div>
+				<!-- /Menu -->
 
+				<div class="slide">
+				</div>
+				<main class="slide">
+					<div class="fw">
+						<section class="title">
+							<header>
+								<h1><img src="deprixa_components/images/global/tracking-search.png" />TRACKING SHIPMENT</h1>
+							</header>
+							<div class="media-left">
+
+							</div>
+						</section>
 					</div>
-				</section>
-			</div>
 
-			<div class="container">
+					<div class="container">
 
 
-				<div>
+						<div>
 
 
-					<table border="0" align="center" width="100%">
+							<table border="0" align="center" width="100%">
 
-						<div class="row">
-							<div class="col-md-6">
+								<div class="row">
+									<div class="col-md-6">
 
-								<h3><i class="fa fa-barcode" style="width: 25px; font-size: 35px; float: left;"></i>&nbsp;<font color="#FF4000"><strong><?php echo $cons_no; ?></strong></font></span></h3>
+										<h3><i class="fa fa-barcode" style="width: 25px; font-size: 35px; float: left;"></i>&nbsp;<font color="#FF4000"><strong><?php echo $cons_no; ?></strong></font></span></h3>
 
-							</div>
-							<div class="col-md-6">
-								<h3>
-									<font color="Black" face="arial,verdana"><strong>Current Status</strong></font>:&nbsp;<span class="label <?php echo $status; ?> label-large">
-										<font size=2 color="White" face="arial,verdana"><?php echo $status; ?></font>
-									</span>&nbsp;&nbsp;&nbsp;
-									<font color="Black" face="arial,verdana"><strong>Booking Mode</strong></font>:&nbsp;<span class="label label-danger"><i class="fa fa-money"></i>
-										<font size=2 color="White" face="arial,verdana"> <?php echo $book_mode; ?></font>
-									</span>
-								</h3>
+									</div>
+									<div class="col-md-6">
+										<h3>
+											<font color="Black" face="arial,verdana"><strong>Current Status</strong></font>:&nbsp;<span class="label <?php echo $status; ?> label-large">
+												<font size=2 color="White" face="arial,verdana"><?php echo $status; ?></font>
+											</span>&nbsp;&nbsp;&nbsp;
+											<font color="Black" face="arial,verdana"><strong>Booking Mode</strong></font>:&nbsp;<span class="label label-danger"><i class="fa fa-money"></i>
+												<font size=2 color="White" face="arial,verdana"> <?php echo $book_mode; ?></font>
+											</span>
+										</h3>
 
-							</div>
-						</div>
-						<div class="col-md-6">
-							<table class="table table-striped">
-								<tr> </tr>
-							</table>
-						</div>
-						<hr />
-						<div class="row">
-							<div class="col-md-4">
-								<font size=3 color="Black" face="arial,verdana"><strong>Schedule Delivery</strong></font><br />
-								<?php echo $schedule; ?>, By End Of Day
-							</div>
-						</div>
-						<hr />
-						<div class="row">
-							<div class="col-md-12">
-								<h2>Additional Information</h2>
-							</div>
-							<br />
-							<div class="col-md-4">
-								<font size=2 color="Black" face="arial,verdana"><strong>HBL / HAWB No :</strong></font> <?php echo $hbl; ?><br />
-								<font size=2 color="Black" face="arial,verdana"><strong>Shipment Type :</strong></font> <?php echo $shipment_type; ?><br />
-								<font size=2 color="Black" face="arial,verdana"><strong>Mode:</strong></font> <?php echo $mode; ?><br />
-								<font size=2 color="Black" face="arial,verdana"><strong>POL:</strong></font> <?php echo $pol; ?><br />
-								<font size=2 color="Black" face="arial,verdana"><strong>Transit Port:</strong></font> <?php echo $transit_port; ?>&nbsp;kg<br />
-								<font size=2 color="Black" face="arial,verdana"><strong>Transit Time:</strong></font> <?php echo $transit_time; ?><br />
-								<font size=2 color="Black" face="arial,verdana"><strong>POD:</strong></font> <?php echo $pod; ?>
-							</div>
-							<div class="col-md-4">
-								<font size=2 color="Black" face="arial,verdana"><strong>ETA POD:</strong></font><?php echo $pick_date; ?><br />
-								<font size=2 color="Black" face="arial,verdana"><strong>Vessel / Voyage:</strong></font> <?php echo $vessel_voyage; ?><br />
-								<font size=2 color="Black" face="arial,verdana"><strong>Connecting Vessel:</strong></font> <?php echo $connecting_vessel; ?><br />
-								<font size=2 color="Black" face="arial,verdana"><strong>Container / Seal No:</strong></font> <?php echo $container_seal; ?>
-							</div>
-							<div class="col-md-4">
-								<font size=2 color="Black" face="arial,verdana"><strong>Shipper:</strong></font> <?php echo $ship_name; ?><br />
-								<font size=2 color="Black" face="arial,verdana"><strong>Consignee:</strong></font> <?php echo $rev_name; ?><br />
-								<font size=2 color="Black" face="arial,verdana"><strong>Commodity:</strong></font> <?php echo $comments; ?><br />
-								<font size=2 color="Black" face="arial,verdana"><strong>Quantity:</strong></font> <?php echo $qty; ?>
-							</div> 
+									</div>
+								</div>
+								<div class="col-md-6">
+									<table class="table table-striped">
+										<tr> </tr>
+									</table>
+								</div>
+								<hr />
+								<div class="row">
+									<div class="col-md-4">
+										<font size=3 color="Black" face="arial,verdana"><strong>Schedule Delivery</strong></font><br />
+										<?php echo $schedule; ?>, By End Of Day
+									</div>
+								</div>
+								<hr />
+								<div class="row">
+									<div class="col-md-12">
+										<h2>Additional Information</h2>
+									</div>
+									<br />
+									<div class="col-md-12">
+										<table class="table">
+											<tr>
+												<th>HBL / HAWB No</th>
+												<th> <?php echo $hbl; ?> </th>
+											</tr>
+											<tr>
+												<td>Shipment Type</td>
+												<td> <?php echo $shipment_type; ?></td>
+											</tr>
+											<tr>
+												<td>Mode</td>
+												<td> <?php echo $mode; ?></td>
+											</tr>
+											<tr>
+												<td>POL</td>
+												<td> <?php echo $pol; ?></td>
+											</tr>
+											<tr>
+												<td>Transit Port</td>
+												<td> <?php echo $transit_port; ?></td>
+											</tr>
+											<tr>
+												<td>Transit Time</td>
+												<td> <?php echo $transit_time; ?></td>
+											</tr>
+											<tr>
+												<td>POD</td>
+												<td> <?php echo $pod; ?></td>
+											</tr>
+											<tr>
+												<td>ETA POD</td>
+												<td> <?php echo $pick_date; ?></td>
+											</tr>
+											<tr>
+												<td>Vessel / Voyage</td>
+												<td> <?php echo $vessel_voyage; ?></td>
+											</tr>
+											<tr>
+												<td>Connecting Vessel</td>
+												<td> <?php echo $connecting_vessel; ?></td>
+											</tr>
+											<tr>
+												<td>Container / Seal No</td>
+												<td> <?php echo $container_seal; ?></td>
+											</tr>
+											<tr>
+												<td>Shipper</td>
+												<td> <?php echo $ship_name; ?></td>
+											</tr>
+											<tr>
+												<td>Consignee</td>
+												<td> <?php echo $rev_name; ?></td>
+											</tr>
+											<tr>
+												<td>Commodity</td>
+												<td> <?php echo $comments; ?></td>
+											</tr>
+											<tr>
+												<td>Quantity</td>
+												<td> <?php echo $qty; ?></td>
+											</tr>
+										</table>
+									</div>
 
-							<!--<div class="row">
+									<!--<div class="row">
 							<div class="col-md-12">
 								<h2>Additional Information</h2>
 							</div>
@@ -210,7 +254,7 @@ if ($no == 1) {
 								<font size=2 color="Black" face="arial,verdana"><strong>Address:</strong></font> <?php echo $r_add; ?>
 							</div> -->
 
-						<!--	<div class="row">
+									<!--	<div class="row">
 							<div class="col-md-12">
 								<h2></h2>
 							</div>
@@ -264,23 +308,23 @@ if ($no == 1) {
       <th scope="col">Quantity</th>
       </tr>
   </thead>
-  <tbody> --> 
-
-							
-
-						
-						
-								<?php
-								require_once('deprixa/database.php');
+  <tbody> -->
 
 
-								//EJECUTAMOS LA CONSULTA DE BUSQUEDA
 
-								$result = mysql_query("SELECT * FROM courier_track WHERE cid = $cid	AND cons_no = '$cons_no' ORDER BY bk_time");
 
-								//CREAMOS NUESTRA VISTA Y LA DEVOLVEMOS AL AJAX
 
-								echo ' <table class="table table-bordered table-striped table-hover" >
+									<?php
+									require_once('deprixa/database.php');
+
+
+									//EJECUTAMOS LA CONSULTA DE BUSQUEDA
+
+									$result = mysql_query("SELECT * FROM courier_track WHERE cid = $cid	AND cons_no = '$cons_no' ORDER BY bk_time");
+
+									//CREAMOS NUESTRA VISTA Y LA DEVOLVEMOS AL AJAX
+
+									echo ' <table class="table table-bordered table-striped table-hover" >
 							<tr class="car_bold col_dark_bold" align="center">
 								<td><font color="Black" face="arial,verdana"><strong>Tracking No</strong></font></td>
 								<td><font color="Black" face="arial,verdana"><strong>Last Location </strong></font></td>
@@ -288,43 +332,43 @@ if ($no == 1) {
 								<td><font color="Black" face="arial,verdana"><strong>Date / Time</strong></font></td>
 								<td><font color="Black" face="arial,verdana"><strong>Remarks</strong></font></td>																							
 							</tr>';
-								if (mysql_num_rows($result) > 0) {
-									while ($row = mysql_fetch_array($result)) {
-										echo '<tr align="center">
+									if (mysql_num_rows($result) > 0) {
+										while ($row = mysql_fetch_array($result)) {
+											echo '<tr align="center">
 								<td>' . $row['cons_no'] . '</td>
 								<td>' . $row['pick_time'] . '</td>
 								<td>' . $row['status'] . '</td>
 								<td>' . $row['bk_time'] . '</td>				
 								<td>' . $row['comments'] . '</td>
 								</tr>';
-									}
-								} else {
-									echo '<tr>
+										}
+									} else {
+										echo '<tr>
 								<td colspan="5" >No results found</td>
 							</tr>';
-								}
-								echo '</table>';
-								?>
-							</div>
+									}
+									echo '</table>';
+									?>
+								</div>
 						</div><!-- .container -->
-				</div>
+					</div>
 
 			</div>
 
-		</main>
+			</main>
 
-		<!-- Footer -->
-		<?php include_once "footer.php"; ?>
-		<!-- /Footer -->
-		</div>
+			<!-- Footer -->
+			<?php include_once "footer.php"; ?>
+			<!-- /Footer -->
+			</div>
 
-		<script src="deprixa_components/bundles/jquery"></script>
-		<script src="deprixa_components/bundles/bootstrap"></script>
-		<script src="deprixa_components/bundles/modernizr"></script>
-		<script src="deprixa_components/Scripts/CookieManager.js"></script>
-		<script src="deprixa_components/Scripts/MPD/Common/ga-events.js"></script>
-		<script src="deprixa_components/bundles/jqueryval"></script>
-		<script src="deprixa_components/Scripts/tracking.js"></script>
+			<script src="deprixa_components/bundles/jquery"></script>
+			<script src="deprixa_components/bundles/bootstrap"></script>
+			<script src="deprixa_components/bundles/modernizr"></script>
+			<script src="deprixa_components/Scripts/CookieManager.js"></script>
+			<script src="deprixa_components/Scripts/MPD/Common/ga-events.js"></script>
+			<script src="deprixa_components/bundles/jqueryval"></script>
+			<script src="deprixa_components/Scripts/tracking.js"></script>
 
 		</body>
 
