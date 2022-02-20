@@ -33,8 +33,8 @@
         </ul>
     </div>
 	    <div class="mpd-social">
-        <a href="#" class="fb" target="_blank" tabindex="-1"></a>
-        <a href="#" class="twit" target="_blank" tabindex="-1"></a>
+        <a href="https://www.facebook.com/GroupCMT" class="fb" target="_blank" tabindex="-1"></a>
+        <a href="https://twitter.com/GroupCmt" class="twit" target="_blank" tabindex="-1"></a>
         <a href="#" class="linked" target="_blank" tabindex="-1"></a>
         <a href="#" class="gplus" target="_blank" tabindex="-1"></a>
     </div><!--social-->

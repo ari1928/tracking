@@ -72,7 +72,7 @@ isUser();
                 <!-- LOGO -->
                 <div class="topbar-left">
                     <a href="admin.php" class="logo">
-                        <span><img src="../images/citra-logo.png"width="23%"></span>
+                        <span><img src="../images/citra-logo.png"width="50%"></span>
                     </a>
                 </div>
                 <!-- End Logo container-->

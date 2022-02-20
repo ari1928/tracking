@@ -87,7 +87,7 @@ if ($no == 1) {
 					<header class="mpdHeader">
 						<a href='index.html' class="mpd-logo" tabindex="-1">
 							<div><span class=""></span></div>
-							<div class="mpd-logo-text"><img src="deprixa/images/citra-logo.png"width="200%"/></div> 
+							<div class="mpd-logo-text"><img src="deprixa/images/citra-logo.png" width="250%" /></div>
 						</a><!-- logo -->
 
 
@@ -104,9 +104,7 @@ if ($no == 1) {
 				</div>
 				<!-- /Menu -->
 
-				<div class="slide">
-				</div>
-				<main class="slide">
+				<main class="slide" style="overflow-x:auto;">
 					<div class="fw">
 						<section class="title">
 							<header>
@@ -119,243 +117,143 @@ if ($no == 1) {
 					</div>
 
 					<div class="container">
+						<div class="row">
+							<div class="col-md-6">
 
+								<h3><i class="fa fa-barcode" style="width: 25px; font-size: 35px; float: left;"></i>&nbsp;<font color="#FF4000"><strong><?php echo $cons_no; ?></strong></font></span></h3>
 
-						<div>
+							</div>
+							<div class="col-md-6">
+								<h3>
+									<font color="Black" face="arial,verdana"><strong>Current Status</strong></font>:&nbsp;<span class="label <?php echo $status; ?> label-large">
+										<font size=2 color="White" face="arial,verdana"><?php echo $status; ?></font>
+									</span>&nbsp;&nbsp;&nbsp;
+									<font color="Black" face="arial,verdana"><strong>Booking Mode</strong></font>:&nbsp;<span class="label label-danger"><i class="fa fa-money"></i>
+										<font size=2 color="White" face="arial,verdana"> <?php echo $book_mode; ?></font>
+									</span>
+								</h3>
 
-
-							<table border="0" align="center" width="100%">
-
-								<div class="row">
-									<div class="col-md-6">
-
-										<h3><i class="fa fa-barcode" style="width: 25px; font-size: 35px; float: left;"></i>&nbsp;<font color="#FF4000"><strong><?php echo $cons_no; ?></strong></font></span></h3>
-
-									</div>
-									<div class="col-md-6">
-										<h3>
-											<font color="Black" face="arial,verdana"><strong>Current Status</strong></font>:&nbsp;<span class="label <?php echo $status; ?> label-large">
-												<font size=2 color="White" face="arial,verdana"><?php echo $status; ?></font>
-											</span>&nbsp;&nbsp;&nbsp;
-											<font color="Black" face="arial,verdana"><strong>Booking Mode</strong></font>:&nbsp;<span class="label label-danger"><i class="fa fa-money"></i>
-												<font size=2 color="White" face="arial,verdana"> <?php echo $book_mode; ?></font>
-											</span>
-										</h3>
-
-									</div>
-								</div>
-								<div class="col-md-6">
-									<table class="table table-striped">
-										<tr> </tr>
-									</table>
-								</div>
-								<hr />
-								<div class="row">
-									<div class="col-md-4">
-										<font size=3 color="Black" face="arial,verdana"><strong>Schedule Delivery</strong></font><br />
-										<?php echo $schedule; ?>, By End Of Day
-									</div>
-								</div>
-								<hr />
-								<div class="row">
-									<div class="col-md-12">
-										<h2>Additional Information</h2>
-									</div>
-									<br />
-									<div class="col-md-12">
-										<table class="table">
-											<tr>
-												<th>HBL / HAWB No</th>
-												<th> <?php echo $hbl; ?> </th>
-											</tr>
-											<tr>
-												<td>Shipment Type</td>
-												<td> <?php echo $shipment_type; ?></td>
-											</tr>
-											<tr>
-												<td>Mode</td>
-												<td> <?php echo $mode; ?></td>
-											</tr>
-											<tr>
-												<td>POL</td>
-												<td> <?php echo $pol; ?></td>
-											</tr>
-											<tr>
-												<td>Transit Port</td>
-												<td> <?php echo $transit_port; ?></td>
-											</tr>
-											<tr>
-												<td>Transit Time</td>
-												<td> <?php echo $transit_time; ?></td>
-											</tr>
-											<tr>
-												<td>POD</td>
-												<td> <?php echo $pod; ?></td>
-											</tr>
-											<tr>
-												<td>ETA POD</td>
-												<td> <?php echo $pick_date; ?></td>
-											</tr>
-											<tr>
-												<td>Vessel / Voyage</td>
-												<td> <?php echo $vessel_voyage; ?></td>
-											</tr>
-											<tr>
-												<td>Connecting Vessel</td>
-												<td> <?php echo $connecting_vessel; ?></td>
-											</tr>
-											<tr>
-												<td>Container / Seal No</td>
-												<td> <?php echo $container_seal; ?></td>
-											</tr>
-											<tr>
-												<td>Shipper</td>
-												<td> <?php echo $ship_name; ?></td>
-											</tr>
-											<tr>
-												<td>Consignee</td>
-												<td> <?php echo $rev_name; ?></td>
-											</tr>
-											<tr>
-												<td>Commodity</td>
-												<td> <?php echo $comments; ?></td>
-											</tr>
-											<tr>
-												<td>Quantity</td>
-												<td> <?php echo $qty; ?></td>
-											</tr>
-										</table>
-									</div>
-
-									<!--<div class="row">
+							</div>
+						</div>
+						<hr />
+						<div class="row">
+							<div class="col-md-4">
+								<font size=3 color="Black" face="arial,verdana"><strong>Schedule Delivery</strong></font><br />
+								<?php echo $schedule; ?>, By End Of Day
+							</div>
+						</div>
+						<hr />
+						<div class="row">
 							<div class="col-md-12">
 								<h2>Additional Information</h2>
 							</div>
 							<br />
-							<div class="col-md-4">
-								<font size=2 color="Black" face="arial,verdana"><strong>HBL / HAWB NO:</strong></font> <?php echo $cons_no; ?><br />
-								<font size=2 color="Black" face="arial,verdana"><strong>Shipment Type:</strong></font> <?php echo $shipment_type; ?><br />
-								<font size=2 color="Black" face="arial,verdana"><strong>Mode:</strong></font> <?php echo $mode; ?><br />
-								<font size=2 color="Black" face="arial,verdana"><strong>POL:</strong></font> <?php echo $pol; ?><br />
-								<font size=2 color="Black" face="arial,verdana"><strong>ETD POL:</strong></font> <?php echo $pick_date; ?><br />
-								<font size=2 color="Black" face="arial,verdana"><strong>Transit Port:</strong></font> <?php echo $Transit_Port; ?><br />
-								<font size=2 color="Black" face="arial,verdana"><strong>Transit Time:</strong></font> <?php echo $Transit_time; ?>
+							<div style="overflow-x:auto;">
+								<table class="table">
+									<tr>
+										<th>HBL / HAWB No</th>
+										<th> <?php echo $hbl; ?> </th>
+									</tr>
+									<tr>
+										<td>Shipment Type</td>
+										<td> <?php echo $shipment_type; ?></td>
+									</tr>
+									<tr>
+										<td>Mode</td>
+										<td> <?php echo $mode; ?></td>
+									</tr>
+									<tr>
+										<td>POL</td>
+										<td> <?php echo $pol; ?></td>
+									</tr>
+									<tr>
+										<td>Transit Port</td>
+										<td> <?php echo $transit_port; ?></td>
+									</tr>
+									<tr>
+										<td>Transit Time</td>
+										<td> <?php echo $transit_time; ?></td>
+									</tr>
+									<tr>
+										<td>POD</td>
+										<td> <?php echo $pod; ?></td>
+									</tr>
+									<tr>
+										<td>ETA POD</td>
+										<td> <?php echo $pick_date; ?></td>
+									</tr>
+									<tr>
+										<td>Vessel / Voyage</td>
+										<td> <?php echo $vessel_voyage; ?></td>
+									</tr>
+									<tr>
+										<td>Connecting Vessel</td>
+										<td> <?php echo $connecting_vessel; ?></td>
+									</tr>
+									<tr>
+										<td>Container / Seal No</td>
+										<td> <?php echo $container_seal; ?></td>
+									</tr>
+									<tr>
+										<td>Shipper</td>
+										<td> <?php echo $ship_name; ?></td>
+									</tr>
+									<tr>
+										<td>Consignee</td>
+										<td> <?php echo $rev_name; ?></td>
+									</tr>
+									<tr>
+										<td>Commodity</td>
+										<td> <?php echo $comments; ?></td>
+									</tr>
+									<tr>
+										<td>Quantity</td>
+										<td> <?php echo $qty; ?></td>
+									</tr>
+								</table>
 							</div>
-							<div class="col-md-4">
-								<font size=3 color="Black" face="arial,verdana"><strong>Shipper info</strong></font><br />
-								<font size=2 color="Black" face="arial,verdana"><strong>Name:</strong></font> <?php echo $ship_name; ?><br />
-								<font size=2 color="Black" face="arial,verdana"><strong>Phone:</strong></font> <?php echo $phone; ?><br />
-								<font size=2 color="Black" face="arial,verdana"><strong>Address:</strong></font> <?php echo $s_add; ?>
-							</div>
-							<div class="col-md-4">
-								<font size=3 color="Black" face="arial,verdana"><strong>Consignee Information</strong></font><br />
-								<font size=2 color="Black" face="arial,verdana"><strong>Name:</strong></font> <?php echo $rev_name; ?><br />
-								<font size=2 color="Black" face="arial,verdana"><strong>Phone:</strong></font> <?php echo $r_phone; ?><br />
-								<font size=2 color="Black" face="arial,verdana"><strong>Address:</strong></font> <?php echo $r_add; ?>
-							</div> -->
 
-									<!--	<div class="row">
-							<div class="col-md-12">
-								<h2></h2>
-							</div>
-							<br />
-
-							<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">HBL / HAWB No </th>
-      </tr>
-	  <tr>
-      <th scope="col">Shipment Type</th>
-      </tr>
-	  <tr>
-      <th scope="col">Mode</th>
-      </tr>
-	  <tr>
-      <th scope="col">POL</th>
-      </tr>
-	  <tr>
-      <th scope="col">Transit Port</th>
-      </tr>
-	  <tr>
-      <th scope="col">Transit Time</th>
-      </tr>
-	  <tr>
-      <th scope="col">POD</th>
-      </tr>
-	  <tr>
-      <th scope="col">ETA POD</th>
-      </tr>
-	  <tr>
-      <th scope="col">Vessel / Voyage</th>
-      </tr>
-	  <tr>
-      <th scope="col">Connecting Vessel</th>
-      </tr>
-	  <tr>
-      <th scope="col">Container / Seal No</th>
-      </tr>
-	  <tr>
-      <th scope="col">Shipper</th>
-      </tr>
-	  <tr>
-      <th scope="col">Consignee</th>
-      </tr>
-	  <tr>
-      <th scope="col">Commodity</th>
-      </tr>
-	  <tr>
-      <th scope="col">Quantity</th>
-      </tr>
-  </thead>
-  <tbody> -->
+							<?php
+							require_once('deprixa/database.php');
 
 
+							//EJECUTAMOS LA CONSULTA DE BUSQUEDA
 
+							$result = mysql_query("SELECT * FROM courier_track WHERE cid = $cid	AND cons_no = '$cons_no' ORDER BY bk_time");
 
+							//CREAMOS NUESTRA VISTA Y LA DEVOLVEMOS AL AJAX
 
-									<?php
-									require_once('deprixa/database.php');
-
-
-									//EJECUTAMOS LA CONSULTA DE BUSQUEDA
-
-									$result = mysql_query("SELECT * FROM courier_track WHERE cid = $cid	AND cons_no = '$cons_no' ORDER BY bk_time");
-
-									//CREAMOS NUESTRA VISTA Y LA DEVOLVEMOS AL AJAX
-
-									echo ' <table class="table table-bordered table-striped table-hover" >
-							<tr class="car_bold col_dark_bold" align="center">
-								<td><font color="Black" face="arial,verdana"><strong>Tracking No</strong></font></td>
-								<td><font color="Black" face="arial,verdana"><strong>Last Location </strong></font></td>
-								<td><font color="Black" face="arial,verdana"><strong>Status</strong></font></td>
-								<td><font color="Black" face="arial,verdana"><strong>Date / Time</strong></font></td>
-								<td><font color="Black" face="arial,verdana"><strong>Remarks</strong></font></td>																							
-							</tr>';
-									if (mysql_num_rows($result) > 0) {
-										while ($row = mysql_fetch_array($result)) {
-											echo '<tr align="center">
-								<td>' . $row['cons_no'] . '</td>
-								<td>' . $row['pick_time'] . '</td>
-								<td>' . $row['status'] . '</td>
-								<td>' . $row['bk_time'] . '</td>				
-								<td>' . $row['comments'] . '</td>
+							echo '<div style="overflow-x:auto;" class="table-responsive"> <table class="table table-bordered table-striped table-hover" >
+								<tr class="car_bold col_dark_bold" align="center">
+									<td><font color="Black" face="arial,verdana"><strong>Tracking No</strong></font></td>
+									<td><font color="Black" face="arial,verdana"><strong>Last Location </strong></font></td>
+									<td><font color="Black" face="arial,verdana"><strong>Status</strong></font></td>
+									<td><font color="Black" face="arial,verdana"><strong>Date / Time</strong></font></td>
+									<td><font color="Black" face="arial,verdana"><strong>Remarks</strong></font></td>																							
 								</tr>';
-										}
-									} else {
-										echo '<tr>
-								<td colspan="5" >No results found</td>
-							</tr>';
-									}
-									echo '</table>';
-									?>
-								</div>
+							if (mysql_num_rows($result) > 0) {
+								while ($row = mysql_fetch_array($result)) {
+									echo '<tr align="center">
+									<td>' . $row['cons_no'] . '</td>
+									<td>' . $row['pick_time'] . '</td>
+									<td>' . $row['status'] . '</td>
+									<td>' . $row['bk_time'] . '</td>				
+									<td>' . $row['comments'] . '</td>
+									</tr>';
+								}
+							} else {
+								echo '<tr>
+													<td colspan="5" >No results found</td>
+												</tr>';
+							}
+							echo '</table></div>';
+							?>
 						</div><!-- .container -->
 					</div>
 
+				</main>
 			</div>
 
-			</main>
 
 			<!-- Footer -->
 			<?php include_once "footer.php"; ?>
