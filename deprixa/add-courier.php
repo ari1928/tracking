@@ -100,7 +100,7 @@ $company = mysql_fetch_array(mysql_query("SELECT * FROM company"));
 													</div>
 													<div class="col-sm-4 form-group">
 
-														<label class="text-success">SHIPPER <span class="required-field">*</span></label>
+														<label class="text-success">CONSIGNE <span class="required-field">*</span></label>
 														<select name="Shippername" class="form-control" id="" required>
 															<option value="">-- Pilih --</option>
 															<?php
@@ -115,7 +115,7 @@ $company = mysql_fetch_array(mysql_query("SELECT * FROM company"));
 
 														<!-- Name -->
 														<div class="form-group">
-															<label class="text-success">CONSIGNEE<span class="required-field">*</span></label>
+															<label class="text-success">SHIPPER<span class="required-field">*</span></label>
 															<input type="text" class="form-control" name="Receivername" placeholder="Masukkan Nama Penerima / Consignee" required>
 
 														</div>
@@ -128,34 +128,24 @@ $company = mysql_fetch_array(mysql_query("SELECT * FROM company"));
 														<label class="text-success">HBL / HAWB No <span class="required-field">*</span></label>
 														<input name="hbl" class="form-control" id="hbl" placeholder="Masukkan HBL / HAWB No" required>
 													</div>
+													<div class="row">
 													<div class="col-sm-4 form-group">
-														<label class="text-success"><i class="fa fa-plane icon text-default-lter"></i>&nbsp;Shipment Type <span class="required-field">*</span></label>
-														<select name="shipment_type" class="form-control" id="Mode" required>
-															<option value="0">Pilih</option>
-															<?php
-															$sql = mysql_query("SELECT * FROM shipment_type");
-															while ($row = mysql_fetch_array($sql)) {
-																echo '<option value="' . $row['name'] . '">' . $row['name'] . '</option>';
-															}
-															?>
-														</select>
+														<label class="text-success">shipment type <span class="required-field">*</span></label>
+														<input name="shipment_type" class="form-control" id="shipment_type" placeholder="Export / Import" required>
 													</div>
+													</div>
+													<div class="row">
 													<div class="col-sm-4 form-group">
-														<label class="text-success"><i class="fa fa-plane icon text-default-lter"></i>&nbsp;MODE <span class="required-field">*</span></label>
-														<select name="Mode" class="form-control" id="Mode" required>
-															<option value="0">Pilih</option>
-															<?php
-															$sql = mysql_query("SELECT name FROM mode_bookings  GROUP BY name");
-															while ($row = mysql_fetch_array($sql)) {
-																if ($cliente == $row['name']) {
-																	echo '<option value="' . $row['name'] . '" selected>' . $row['name'] . '</option>';
-																} else {
-																	echo '<option value="' . $row['name'] . '">' . $row['name'] . '</option>';
-																}
-															}
-															?>
-														</select>
+														<label class="text-success">Mode <span class="required-field">*</span></label>
+														<input name="mode" class="form-control" id="hbl" placeholder="Masukkan mode" required>
 													</div>
+													
+													<div class="col-sm-4 form-group">
+														<label class="text-success">shipment term<span class="required-field">*</span></label>
+														<input name="Shipment_Term" class="form-control" id="Shipment_Term" placeholder="Shipment Term" required>
+													</div>
+													</div>
+													
 												</div>
 												<div class="row">
 													<div class="col-md-4">
@@ -298,7 +288,7 @@ $company = mysql_fetch_array(mysql_query("SELECT * FROM company"));
 														<label for="dtp_input1" class="text-success"><i class="fa fa-file icon text-default-lter"></i>&nbsp;UPLOAD LAMPIRAN (pdf) min 10kb Max 10mb</i> <span class="required-field">*</span></label>
 														<div>
 															<div class="input-group">
-																<input type="file" class="form-control" name="lampiran1" required>
+																<input type="file" class="form-control" name="lampiran1" >
 															</div><!-- input-group -->
 														</div>
 													</div>
@@ -306,7 +296,7 @@ $company = mysql_fetch_array(mysql_query("SELECT * FROM company"));
 														<label for="dtp_input1" class="text-success"><i class="fa fa-file icon text-default-lter"></i>&nbsp;UPLOAD LAMPIRAN (pdf) min 10kb Max 10mb</i> <span class="required-field">*</span></label>
 														<div>
 															<div class="input-group">
-																<input type="file" class="form-control" name="lampiran2" required>
+																<input type="file" class="form-control" name="lampiran2" >
 															</div><!-- input-group -->
 														</div>
 													</div>
@@ -314,7 +304,7 @@ $company = mysql_fetch_array(mysql_query("SELECT * FROM company"));
 														<label for="dtp_input1" class="text-success"><i class="fa fa-file icon text-default-lter"></i>&nbsp;UPLOAD LAMPIRAN (pdf) min 10kb Max 10mb</i> <span class="required-field">*</span></label>
 														<div>
 															<div class="input-group">
-																<input type="file" class="form-control" name="lampiran3" required>
+																<input type="file" class="form-control" name="lampiran3" >
 															</div><!-- input-group -->
 														</div>
 													</div>

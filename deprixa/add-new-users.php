@@ -77,7 +77,7 @@ include("header.php");
 												<div class="col-xs-12">
 												<!--Botones principales-->
 												<button type="button" class="btn btn-md btn-success" data-toggle="modal" data-target="#nuevo"><i class="fa fa-user-plus"></i>
-												 Pegawai baru</button>
+												tambah pegawai</button>
 												 
 												</div>
 											<div class="col-xs-12">

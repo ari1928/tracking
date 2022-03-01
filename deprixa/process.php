@@ -143,7 +143,8 @@ function addCons()
 	$Bookingmode = '';
 	$Totalfreight = $_POST['Totalfreight'];
 	$Totaldeclarate = '0';
-	$Mode = $_POST['Mode'];
+	$mode = $_POST['mode'];
+	$Shipment_Term = $_POST['Shipment_Term'];
 
 	$Packupdate = $_POST['Packupdate'];
 	$Schedule = $_POST['Schedule'];
@@ -176,9 +177,9 @@ function addCons()
 	$path3 = '../upload/lampiran/' . $lampiran3;
 	move_uploaded_file($temp3, $path3);
 
-	$sql = "INSERT INTO courier (cons_no, ship_name, phone, s_add, cc, rev_name, r_phone, r_add, cc_r, email, type, weight, variable, shipping_subtotal, invice_no, qty, book_mode, freight, declarate, mode, pick_date, schedule, pick_time, status, comments,book_date,status_delivered, officename, user,
+	$sql = "INSERT INTO courier (cons_no, ship_name, phone, s_add, cc, rev_name, r_phone, r_add, cc_r, email, type, weight, variable, shipping_subtotal, invice_no, qty, book_mode, freight, declarate, mode, Shipment_Term, pick_date, schedule, pick_time, status, comments,book_date,status_delivered, officename, user,
 	hbl,shipment_type,pol,transit_port,transit_time,pod,vessel_voyage,connecting_vessel,container_seal,lampiran1,lampiran2,lampiran3)
-			VALUES('$ConsignmentNo', '$Shippername','$Shipperphone', '$Shipperaddress', '$Shippercc', '$Receivername','$Receiverphone','$Receiveraddress', '$Receivercc_r', '$Receiveremail', '$Shiptype','$Weight' , '$variable', '$shipping_subtotal', '$Invoiceno', '$Qnty', '$Bookingmode', '$Totalfreight',  '$Totaldeclarate', '$Mode', '$Packupdate', '$Schedule', '$Pickuptime', '$status', '$Comments', curdate(),'OTW', '$officename',
+			VALUES('$ConsignmentNo', '$Shippername','$Shipperphone', '$Shipperaddress', '$Shippercc', '$Receivername','$Receiverphone','$Receiveraddress', '$Receivercc_r', '$Receiveremail', '$Shiptype','$Weight' , '$variable', '$shipping_subtotal', '$Invoiceno', '$Qnty', '$Bookingmode', '$Totalfreight',  '$Totaldeclarate', '$mode', '$Shipment_Term', '$Packupdate', '$Schedule', '$Pickuptime', '$status', '$Comments', curdate(),'OTW', '$officename',
 			 '$user',
 			 '$hbl',
 			 '$shipment_type',
@@ -291,7 +292,8 @@ function addcourier_update()
 	$Bookingmode = '';
 	$Totalfreight = $_POST['Totalfreight'];
 	$Totaldeclarate = '0';
-	$Mode = $_POST['Mode'];
+	$mode = $_POST['mode'];
+	$Shipment_Term = $_POST['Shipment_Term'];
 
 	$Packupdate = $_POST['Packupdate'];
 	$Schedule = $_POST['Schedule'];
@@ -309,7 +311,20 @@ function addcourier_update()
 	$pod = $_POST['pod'];
 	$vessel_voyage = $_POST['vessel_voyage'];
 	$connecting_vessel = $_POST['connecting_vessel'];
-	$container_seal = $_POST['container_seal'];	
+	$container_seal = $_POST['container_seal'];
+	$lampiran1 = time() . '-' . $_FILES['lampiran1']['name'];
+	$temp1 = $_FILES['lampiran1']['tmp_name'];
+	$path1 = '../upload/lampiran/' . $lampiran1;
+	move_uploaded_file($temp1, $path);
+	$lampiran2 = time() . '-' . $_FILES['lampiran2']['name'];
+	$temp2 = $_FILES['lampiran2']['tmp_name'];
+	$path2 = '../upload/lampiran/' . $lampiran2;
+	move_uploaded_file($temp2, $path2);
+	$lampiran3 = time() . '-' . $_FILES['lampiran3']['name'];
+	$temp3 = $_FILES['lampiran3']['tmp_name'];
+	$path3 = '../upload/lampiran/' . $lampiran3;
+	move_uploaded_file($temp3, $path3);
+
 
 	$sql = "UPDATE courier SET cons_no='$ConsignmentNo', 
 					   ship_name='$Shippername',
@@ -326,7 +341,8 @@ function addcourier_update()
 					   variable='$variable', 
 					   invice_no='$Invoiceno',
 					   declarate='$Totaldeclarate',
-					    mode ='$Mode', 
+					    mode ='$mode',
+						Shipment_Term ='$Shipment_Term',
 						pick_date='$Packupdate' , 
 						schedule='$Schedule',
 						pick_time='$Pickuptime',
@@ -346,7 +362,11 @@ function addcourier_update()
 					   pod='$pod', 
 					   vessel_voyage='$vessel_voyage', 
 					   connecting_vessel='$connecting_vessel', 
-					   container_seal='$container_seal'  
+					   container_seal='$container_seal',
+					   lampiran1='$lampiran1',   
+					   lampiran2='$lampiran2',  
+					   lampiran3='$lampiran3'
+					   
                        WHERE cid = '$cid'";
 	//echo $sql;
 	dbQuery($sql);

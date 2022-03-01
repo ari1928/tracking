@@ -163,6 +163,10 @@ if ($no == 1) {
 										<td> <?php echo $mode; ?></td>
 									</tr>
 									<tr>
+										<td>Shipment Term</td>
+										<td> <?php echo $Shipment_Term; ?></td>
+									</tr>
+									<tr>
 										<td>POL</td>
 										<td> <?php echo $pol; ?></td>
 									</tr>
@@ -227,7 +231,7 @@ if ($no == 1) {
 								<tr class="car_bold col_dark_bold" align="center">
 									<td><font color="Black" face="arial,verdana"><strong>Tracking No</strong></font></td>
 									<td><font color="Black" face="arial,verdana"><strong>Last Location </strong></font></td>
-									<td><font color="Black" face="arial,verdana"><strong>Status</strong></font></td>
+								<!--<td><font color="Black" face="arial,verdana"><strong>Status</strong></font></td>-->
 									<td><font color="Black" face="arial,verdana"><strong>Date / Time</strong></font></td>
 									<td><font color="Black" face="arial,verdana"><strong>Remarks</strong></font></td>																							
 								</tr>';
@@ -236,7 +240,7 @@ if ($no == 1) {
 									echo '<tr align="center">
 									<td>' . $row['cons_no'] . '</td>
 									<td>' . $row['pick_time'] . '</td>
-									<td>' . $row['status'] . '</td>
+									<!--<td>' . $row['status'] . '</td>-->
 									<td>' . $row['bk_time'] . '</td>				
 									<td>' . $row['comments'] . '</td>
 									</tr>';

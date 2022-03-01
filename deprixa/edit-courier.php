@@ -101,7 +101,7 @@ if ($count > 0) {
 
 										<h3 class="classic-title"><span><strong><i class="fa fa-truck icon text-default-lter"></i>&nbsp;&nbsp;UPDATE Pengiriman</strong></h3> <br>
 										<!-- START Checkout form -->
-										<form action="process.php?action=update-addcourier" name="formulario" method="post">
+										<form action="process.php?action=update-addcourier" name="formulario" method="post" enctype="multipart/form-data">
 											<table border="0" align="center" width="100%">
 												<div class="row">
 
@@ -146,31 +146,26 @@ if ($count > 0) {
 																<label class="text-success">HBL / HAWB No <span class="required-field">*</span></label>
 																<input name="hbl" class="form-control" id="hbl" value="<?= $hbl; ?>" placeholder="Masukkan HBL / HAWB No" required>
 															</div>
-															<div class="col-sm-4 form-group">
-																<label class="text-success"><i class="fa fa-plane icon text-default-lter"></i>&nbsp;Shipment Type <span class="required-field">*</span></label>
-																<select name="shipment_type" class="form-control" id="Mode" required>
-																	<option value="0">Pilih</option>
-																	<?php
-																	$sql = mysql_query("SELECT * FROM shipment_type");
-																	while ($row = mysql_fetch_array($sql)) {
-																		$terpilih = $shipment_type == $row['name'] ? "selected" : "";
-																		echo '<option value="' . $row['name'] . '" ' . $terpilih . ' >' . $row['name'] . '</option>';
-																	}
-																	?>
-																</select>
+															<div class="row">
+													<div class="col-sm-4 form-group">
+														<label class="text-success">shipment type <span class="required-field">*</span></label>
+														<input name="shipment_type" class="form-control" id="shipment_type" value="<?= $shipment_type; ?>" placeholder="Masukkan shipment type" required>
+													</div>
+													</div>
 															</div>
+															<div class="row">
 															<div class="col-sm-4 form-group">
-																<label class="text-success"><i class="fa fa-plane icon text-default-lter"></i>&nbsp;MODE <span class="required-field">*</span></label>
-																<select name="Mode" class="form-control" id="Mode" required>
-																	<option value="0">Pilih</option>
-																	<?php
-																	$sql = mysql_query("SELECT name FROM mode_bookings  GROUP BY name");
-																	while ($row = mysql_fetch_array($sql)) {
-																		$terpilih = $mode == $row['name'] ? "selected" : "";
-																		echo '<option value="' . $row['name'] . '" ' . $terpilih . ' >' . $row['name'] . '</option>';
-																	}
-																	?>
-																</select>
+															<label class="text-success">Mode<span class="required-field">*</span></label>
+														<input name="mode" class="form-control" id="mode" value="<?= $mode; ?>" placeholder="Masukkan mode" required>
+															</div>
+												
+															<div class="row">
+													<div class="col-sm-4 form-group">
+														<label class="text-success">Shipment term <span class="required-field">*</span></label>
+														<input name="Shipment_Term" class="form-control" id="Shipemnt_Term" value="<?= $Shipment_Term; ?>" placeholder="Masukkan Shipemnt Term" required>
+													</div>
+													</div>
+															</div>
 															</div>
 														</div>
 														<div class="row">
@@ -286,9 +281,36 @@ if ($count > 0) {
 																</div>
 															</div>
 														</div>
+														<div class="col-sm-4 form-group">
+														<label for="dtp_input1" class="text-success"><i class="fa fa-file icon text-default-lter"></i>&nbsp;UPLOAD LAMPIRAN (pdf) min 10kb Max 10mb</i> <span class="required-field">*</span></label>
+														<div>
+															<div class="input-group">
+																<input type="file" class="form-control" name="lampiran1" >
+															</div><!-- input-group -->
+														</div>
+													</div>
+													<div class="col-sm-4 form-group">
+														<label for="dtp_input1" class="text-success"><i class="fa fa-file icon text-default-lter"></i>&nbsp;UPLOAD LAMPIRAN (pdf) min 10kb Max 10mb</i> <span class="required-field">*</span></label>
+														<div>
+															<div class="input-group">
+																<input type="file" class="form-control" name="lampiran2" >
+															</div><!-- input-group -->
+														</div>
+													</div>
+													<div class="col-sm-4 form-group">
+														<label for="dtp_input1" class="text-success"><i class="fa fa-file icon text-default-lter"></i>&nbsp;UPLOAD LAMPIRAN (pdf) min 10kb Max 10mb</i> <span class="required-field">*</span></label>
+														<div>
+															<div class="input-group">
+																<input type="file" class="form-control" name="lampiran3" >
+															</div><!-- input-group -->
+														</div>
+													</div>
+												</div>
+
+											</fieldset>
 
 
-													</fieldset>
+												
 
 
 													<div class="col-sm-12 form-group">
@@ -319,7 +341,7 @@ if ($count > 0) {
 						<form action="process.php?action=update-status" method="post" name="frmShipment" id="frmShipment">
 							<div class="row">
 								<!-- Origin Office -->
-								<div class="col-md-4 form-groupform-group">
+								<div class="col-md-6 form-groupform-group">
 									<label for="zipcode" class="control-label">LOKASI BARU:</label>
 									<span id="inter_origin" style="display: block;">
 										<select onchange="print_state('state', this.selectedIndex);" id="country" required name="pick_time" class="form-control"></select>
@@ -329,7 +351,7 @@ if ($count > 0) {
 								</div>
 
 								<!-- Origin Office -->
-								<div class="col-md-4 form-groupform-group">
+								<!--<div class="col-md-4 form-groupform-group">
 									<label for="zipcode" class="control-label">NEW STATE:</label>
 									<select name="status" class="form-control">
 										<option value="Finished">Finished</option>
@@ -337,16 +359,16 @@ if ($count > 0) {
 										<option value="On-Hold">On Hold</option>
 										<option value="Landed">Landed</option>
 										<option value="Delayed">Delayed</option>
-									</select>
-								</div>
+									</select> 
+								</div> -->
 								<!-- Comments -->
-								<div class="col-md-4 form-groupform-group">
+								<div class="col-md-6 form-groupform-group">
 									<label for="message" class="control-label">COMMENTS:</label>
 									<textarea class="form-control" name="comments" id="comments" required></textarea>
 								</div>
 
 								<!-- Send button -->
-								<div class="col-md-3 form-group">
+								<div class="col-md-6 form-group">
 									<p>
 										<font color="#FF6100"><strong>Update if necessary</strong></font>
 									</p>

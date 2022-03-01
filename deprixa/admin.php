@@ -70,11 +70,12 @@ isUser();
 				?>
 					<?php
 						// Always first connect to the database mysql
-						$sql = "SELECT * FROM courier WHERE  status='In-Transit' ";  // sentence sql
+						$sql = "SELECT * FROM courier WHERE  status='On-Hold
+						' ";  // sentence sql
 						$result = mysql_query($sql);
 						$numero1 = mysql_num_rows($result); // get the number of rows
 					?>
-                    <div class="col-xs-6 col-md-3 col-lg-3 col-xl-2">
+                    <!--<div class="col-xs-6 col-md-3 col-lg-3 col-xl-2">
                         <div class="card-box tilebox-one">
                             <i class="icon-plane pull-xs-right text-muted"></i>
                             <h6 class="text-muted text-uppercase m-b-20">Pengiriman Sedang Transit</h6>
@@ -95,19 +96,35 @@ isUser();
 					
 					<?php
 						// Always first connect to the database mysql
-						$sql = "SELECT * FROM courier_online WHERE  status='In-Transit' ";  // sentence sql
+						$sql = "SELECT * FROM courier WHERE  status='On-Hold' ";  // sentence sql
 						$result = mysql_query($sql);
 						$numero2 = mysql_num_rows($result); // get the number of rows
 					?>
-                    <div class="col-xs-6 col-md-3 col-lg-3 col-xl-2">
+                   <div class="col-xs-6 col-md-3 col-lg-3 col-xl-2">
                         <div class="card-box tilebox-one">
-                            <i class="icon-envelope-open pull-xs-right text-muted"></i>
-                            <h6 class="text-muted text-uppercase m-b-15 m-t-10">Online Bookings</h6>
-                            <h2 class="text-danger text-uppercase m-b-20" data-plugin="counterup"><?php echo $numero2; ?></h2>
-                            <span> 
-							</span> <span class="text-muted">Booking Online dalam Transit</span>
+                            <i class="icon-plane pull-xs-right text-muted"></i>
+                            <h6 class="text-muted text-uppercase m-b-20">Pengiriman Sedang On-Hoald</h6>
+                            <h2 class="m-b-20" data-plugin="counterup"><?php echo $numero1; ?></h2>
+                            <span class="label label-success"> 
+							<?php
+								$sql_1 = mysql_query("SELECT concat(round(count( * ) *100 /(SELECT count( * ) FROM courier)) , \"%\") AS percent
+								FROM courier WHERE  status = 'On-Hold' GROUP BY status");
+								while ($rr = mysql_fetch_array($sql_1))
+
+								for ($i=0; $i<mysql_num_fields($sql_1); $i++)
+								echo $rr[$i] . " ";
+								echo "<br>";	
+											
+							?>  </span> <span class="text-muted">Pengiriman Sedang On-Hoald</span>
                         </div>
                     </div>
+					
+					<?php
+						// Always first connect to the database mysql
+						$sql = "SELECT * FROM courier WHERE  status='On-Hold' ";  // sentence sql
+						$result = mysql_query($sql);
+						$numero2 = mysql_num_rows($result); // get the number of rows
+					?>
 
                     <div class="col-xs-12 col-md-6 col-lg-6 col-xl-2">
                         <div class="card-box tilebox-one">
@@ -283,7 +300,7 @@ isUser();
                     <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
                         <div class="card-box tilebox-one">
                             <i class="icon-rocket pull-xs-right text-muted"></i>
-                            <h6 class="text-muted text-uppercase m-b-20">Spengiriman yang sudah diterima</h6>
+                            <h6 class="text-muted text-uppercase m-b-20">pengiriman yang sudah diterima</h6>
                             <h2 class="m-b-20"><?php echo $company['currency']; ?><span data-plugin="counterup"><?php
 											$result = mysql_query("SELECT SUM(shipping_subtotal	) as total FROM courier WHERE book_mode='Cash-on-Delivery' AND user='".$_SESSION["user_type"]."'");   
 											$row = mysql_fetch_array($result, MYSQL_ASSOC);
@@ -328,12 +345,12 @@ isUser();
 											$result = mysql_query($sql);
 											$numero2 = mysql_num_rows($result); // get the number of rows
 										?>
-                                        <li class="nav-item">
+                                  <!--   <li class="nav-item">
                                             <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile"
                                                role="tab" aria-controls="profile">
 											   <i class="icon-envelope-open"></i>&nbsp; <strong><span class="text-danger text-uppercase m-b-15 m-t-10"><?php echo $numero2; ?></span></strong>&nbsp;DAFTAR PENGIRIMAN YANG ONELINE BOOKING</a>
                                         </li>
-                                    </ul>
+                                    </ul> -->
 									<br><br>
                                     <div class="tab-content" id="myTabContent">
                                         <div role="tabpanel" class="tab-pane fade in active" id="home"
@@ -349,9 +366,11 @@ isUser();
 														  <?php } ?>
 														  <th>Diterima</th>
 														  <th></th>
-														  <th></th>														  
+														  <th></th>
+														  <th></th>
+														  <th></th>
 														  <th>Tracking </th>
-														  <th>Metode Pembayaran</th>
+														  <th>Tipe Pengiriman</th>
 														  <th>pengirim</th>
 														  <th>Penerima</th>
 														  <th>Tanggal</th>
@@ -367,7 +386,7 @@ isUser();
 															<?php  					
 																$result3 = mysql_query("SELECT * FROM courier WHERE status != 'delivered'  ORDER BY cid DESC");
 																while($row = mysql_fetch_array($result3)) {					
-															?> 
+															?>
 																  <td align="center">					
 																  <a href="edit-courier.php?cid=<?php echo $row['cid']; ?>">
 																  <img src="images/edit.png"  height="20" width="20"></a></td>																 
@@ -378,14 +397,34 @@ isUser();
 																  <td class="gentxt" align="center">
 																  <a href="process.php?action=delivered&cid=<?php echo $row['cid']; ?>" onclick="return confirm('Sure like to change the status of shipping?');">
 																	<img src="images/delivery.png"  height="20" width="20"></a></td>						  
-																  <td align="center">
+																<!--  <td align="center">
 																  <a target="_blank" href="print-invoice/invoice-print.php?cid=<?php echo $row['cid']; ?>">
+																  <img src="images/print.png"  height="20" width="20"></a></td> -->
+																  
+																<!--  <td align="center">
+																  <a target="_blank" href="print-invoice/invoice-print.php?cid=<?php echo $row['cid']; ?>">
+																  <img src="images/print.png"  height="20" width="20"></a></td> -->
+
+																<!--  <td align="center">
 																  <img src="images/print.png"  height="20" width="20"></a></td>
+																  <td align="center"> -->
+
 																  <td align="center">
-																  <a  href="barcode/html/BCGcode39.php?cons_no=<?php echo $row['cons_no']; ?>" target="_blank">
+                                            <a target="_blank" href="/tracking/upload/lampiran/<?php echo $row['lampiran1']; ?>">
+                                                <img src="images/print.png" border="0" height="20" width="20"></a>
+                                        </td>
+                                        <td align="center">
+                                            <a target="_blank" href="/tracking/upload/lampiran/<?php echo $row['lampiran2']; ?>">
+                                                <img src="images/print.png" border="0" height="20" width="20"></a>
+                                        </td>
+                                        <td align="center">
+                                            <a target="_blank" href="/tracking/upload/lampiran/<?php echo $row['lampiran3']; ?>">
+                                                <img src="images/print.png" border="0" height="20" width="20"></a>
+												<td align="center">
+																 <a  href="barcode/html/BCGcode39.php?cons_no=<?php echo $row['cons_no']; ?>" target="_blank">
 																  <img src="images/barcode.png" height="20" width="20"></a></td>
 																  <td><font color="#000"><?php echo $row['cons_no']; ?></font></td>
-																  <td><span class="label <?php echo $row['book_mode']; ?> label-large"><?php echo $row['book_mode']; ?></span></td> 							 
+																  <td><?php echo $row['shipment_type']; ?></td>							 
 																  <td><?php echo $row['ship_name']; ?></td>
 																  <td><?php echo $row['rev_name']; ?></td>
 																  <td><?php echo $row['pick_date']; ?></td>
@@ -415,7 +454,7 @@ isUser();
 																  <a  href="barcode/html/BCGcode39.php?cons_no=<?php echo $row['cons_no']; ?>" target="_blank">
 																  <img src="images/barcode.png" height="20" width="20"></a></td>																  
 																  <td><font color="#000"><?php echo $row['cons_no']; ?></font></td>
-																  <td><span class="label <?php echo $row['book_mode']; ?> label-large"><?php echo $row['book_mode']; ?></span></td> 							 
+																  <td><?php echo $row['shipment_type']; ?></td>						 
 																  <td><?php echo $row['ship_name']; ?></td>
 																  <td><?php echo $row['rev_name']; ?></td>
 																  <td><?php echo $row['pick_date']; ?></td>
@@ -443,7 +482,7 @@ isUser();
 														  <th></th>
 														  <th>Untuk Membayar</th>
 														  <th>Pembayaran </th>
-														  <th>Pelanggan/th>
+														  <th>Pelanggan<	/th>
 														  <th>dari</th>
 														  <th>Penerima</th>
 														  <th>Ke</th>
@@ -522,7 +561,7 @@ isUser();
                                             <td><?php echo $row['book_date']; ?></td>
                                             <td><span class="label <?php echo $row['status']; ?> label-large"><?php echo $row['status']; ?></span></td>    
                                         </tr>
-										<?php } ?>
+										<?php } ?> 
                                     </tbody>
                                 </table>
                             </div>
