@@ -410,15 +410,15 @@ isUser();
 																  <td align="center"> -->
 
 																  <td align="center">
-                                            <a target="_blank" href="/tracking/upload/lampiran/<?php echo $row['lampiran1']; ?>">
+                                            <a target="_blank" href="upload/lampiran/<?php echo $row['lampiran1']; ?>">
                                                 <img src="images/print.png" border="0" height="20" width="20"></a>
                                         </td>
                                         <td align="center">
-                                            <a target="_blank" href="/tracking/upload/lampiran/<?php echo $row['lampiran2']; ?>">
+                                            <a target="_blank" href="upload/lampiran/<?php echo $row['lampiran2']; ?>">
                                                 <img src="images/print.png" border="0" height="20" width="20"></a>
                                         </td>
                                         <td align="center">
-                                            <a target="_blank" href="/tracking/upload/lampiran/<?php echo $row['lampiran3']; ?>">
+                                            <a target="_blank" href="upload/lampiran/<?php echo $row['lampiran3']; ?>">
                                                 <img src="images/print.png" border="0" height="20" width="20"></a>
 												<td align="center">
 																 <a  href="barcode/html/BCGcode39.php?cons_no=<?php echo $row['cons_no']; ?>" target="_blank">
