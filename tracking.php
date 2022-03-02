@@ -76,7 +76,7 @@
                     <div class="form-group mob-track">
                         <div class="input-group">
                             <!--<div class="input-group-addon">MPD</div>-->
-                            <input type="text" class="form-control" name="Consignment" id="Consignment" placeholder="Example AWB-472304198">
+                            <input type="text" class="form-control" name="Consignment" id="Consignment" placeholder="Example HBL / HAWB ">
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary" name="Submit" onClick="MM_validateForm('Consignment','','R');return document.MM_returnValue"><img src="deprixa/images/Tracking.png" alt="x" />Tracking Paket Saya</button>

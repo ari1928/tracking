@@ -178,11 +178,11 @@ isUser();
                         $result0 = mysql_query("SELECT * FROM online_booking WHERE  status='Pending'");
                         $nobookings = dbNumRows($result0);
                         ?>
-                        <li class="has-submenu">
+                      <!--  <li class="has-submenu">
                             <a href="online-bookings.php"><i class="fa fa-envelope">&nbsp;&nbsp;<font color="#FF0000"><strong><?php echo $nobookings; ?></strong></font></i> <span> ONLINE PESANAN</span> </a>
                             <ul class="submenu">
                                 <li><a href="transfer-bank.php"><i class="fa fa-money"></i>&nbsp;&nbsp;Daftar Pembayaran, Transfer Bank</a></li>
-                            </ul>
+                            </ul> -->
                         </li>
                         <li class="has-submenu">
                             <a href="#"><i class="zmdi zmdi-collection-text"></i> <span> LAPORAN </span> </a>
@@ -190,9 +190,9 @@ isUser();
                                 <li><a href="shipping-list.php"><i class="fa fa-file-text-o"></i>&nbsp;&nbsp;Daftar Pengiriman</a></li>
                                 <li><a href="delivered-list.php"><i class="fa fa-truck"></i>&nbsp;&nbsp;Daftar Pengiriman yang telah Sampai Tujuan</a></li>
                                 <li><a href="delivered-list-online.php"><i class="fa fa-truck"></i>&nbsp;&nbsp;Daftar Pengiriman Online yang telah diterima</a></li>
-                                <li><a href="list-of-shipping-paid.php"><i class="fa fa-money"></i>&nbsp;&nbsp;Daftar Pengiriman yang telah Dibayar</a></li>
+                         <!--<li><a href="list-of-shipping-paid.php"><i class="fa fa-money"></i>&nbsp;&nbsp;Daftar Pengiriman yang telah Dibayar</a></li>
                                 <li><a href="list-of-shipping-topaid.php"><i class="fa fa-credit-card"></i>&nbsp;&nbsp;Daftar Pengiriman yang untuk dibayar</a></li>
-                                <li><a href="list-of-shipping-cash-on-delivery.php"><i class="fa fa-usd"></i>&nbsp;&nbsp;Daftar Pengiriman yang COD/Cash On Delivery</a></li>
+                                <li><a href="list-of-shipping-cash-on-delivery.php"><i class="fa fa-usd"></i>&nbsp;&nbsp;Daftar Pengiriman yang COD/Cash On Delivery</a></li>-->
                             </ul>
                         </li>
                         <?php

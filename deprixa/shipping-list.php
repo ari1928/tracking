@@ -69,7 +69,7 @@ isUser();
 								<td>&nbsp;&nbsp;&nbsp;&nbsp;TO&nbsp;&nbsp;&nbsp;&nbsp;</td>
 								<td><i class="icon-append fa fa-calendar"></i>&nbsp;&nbsp;<input type="date" id="bd-hasta" class="gentxt1" /></td>
 
-								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="javascript:reportepaymentPDF();" class="btn btn-primary">Export ke <strong>PDF</strong></a></td>
+								<!--<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="javascript:reportepaymentPDF();" class="btn btn-primary">Export ke <strong>PDF</strong></a></td>-->
 							</tr>
 						</table>
 						<table id="datatable-buttons" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -114,8 +114,11 @@ isUser();
 							<thead>
 								<tr>
 									<th>Cetak</th>
+									<th></th>
+									<th></th>
 									<th>Tracking </th>
-									<th>Mode Pembayaran</th>
+									<!--<th>Mode Pembayaran</th>-->
+									<th>Type Pengirim </th>
 									<th>Pengiriman</th>
 									<th>penerima </th>
 									<th>Tanggal</th>
@@ -133,14 +136,27 @@ isUser();
 									while ($row = mysql_fetch_array($result3)) {
 									?>
 										<tr>
-											<td align="center">
-												<a target="_blank" href="print-invoice/invoice-print.php?cid=<?php echo $row['cid']; ?>">
+											<!-- <td align="center">
+												<a target="_blank" href="print-invoice/invoice-print.php?cid=<?php echo $row['cid']; ?>
 													<img src="images/print.png" border="0" height="20" width="20"></a>
-											</td>
+											</td> -->
+
+											<td align="center">
+                                            <a target="_blank" href="../../upload/lampiran/<?php echo $row['lampiran1']; ?>">
+                                                <img src="images/print.png" border="0" height="20" width="20"></a>
+                                        </td>
+                                        <td align="center">
+                                            <a target="_blank" href="../../upload/lampiran/<?php echo $row['lampiran2']; ?>">
+                                                <img src="images/print.png" border="0" height="20" width="20"></a>
+                                        </td>
+                                        <td align="center">
+                                            <a target="_blank" href="../../upload/lampiran/<?php echo $row['lampiran3']; ?>">
+                                                <img src="images/print.png" border="0" height="20" width="20"></a></td>
 											<td>
 												<font color="#000"><?php echo $row['cons_no']; ?></font>
 											</td>
-											<td><span class="label <?php echo $row['book_mode']; ?> label-large"><?php echo $row['book_mode']; ?></span></td>
+											<td><?php echo $row['shipment_type']; ?></td>
+											<!--<td><span class="label <?php echo $row['book_mode']; ?> label-large"><?php echo $row['book_mode']; ?></span></td>-->
 											<td><?php echo $row['ship_name']; ?></td>
 											<td><?php echo $row['rev_name']; ?></td>
 											<td><?php echo $row['pick_date']; ?></td>
@@ -161,14 +177,26 @@ isUser();
 									while ($row = mysql_fetch_array($result3)) {
 									?>
 										<tr>
-											<td align="center">
+											<!--<td align="center">
 												<a target="_blank" href="print-invoice/invoice-print.php?cid=<?php echo $row['cid']; ?>">
 													<img src="images/print.png" border="0" height="20" width="20"></a>
-											</td>
+											</td>-->
+											<td align="center">
+                                            <a target="_blank" href="../../upload/lampiran/<?php echo $row['lampiran1']; ?>">
+                                                <img src="images/print.png" border="0" height="20" width="20"></a>
+                                        </td>
+                                        <td align="center">
+                                            <a target="_blank" href="../../upload/lampiran/<?php echo $row['lampiran2']; ?>">
+                                                <img src="images/print.png" border="0" height="20" width="20"></a>
+                                        </td>
+                                        <td align="center">
+                                            <a target="_blank" href="../../upload/lampiran/<?php echo $row['lampiran3']; ?>">
+                                                <img src="images/print.png" border="0" height="20" width="20"></a></td>
 											<td>
 												<font color="#000"><?php echo $row['cons_no']; ?></font>
 											</td>
-											<td><span class="label <?php echo $row['book_mode']; ?> label-large"><?php echo $row['book_mode']; ?></span></td>
+											<td><?php echo $row['shipment_type']; ?></td>
+											<!--<td><span class="label <?php echo $row['book_mode']; ?> label-large"><?php echo $row['book_mode']; ?></span></td> -->
 											<td><?php echo $row['ship_name']; ?></td>
 											<td><?php echo $row['rev_name']; ?></td>
 											<td><?php echo $row['pick_date']; ?></td>

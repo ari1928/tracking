@@ -78,6 +78,12 @@ isUser();
 									  Cetak Invoice
 								  </th>
 								  <th>
+									  
+								  </th>
+								  <th>
+									 
+								  </th>
+								  <th>
 									  # Tracking
 								  </th>
 								  <th>
@@ -106,9 +112,24 @@ isUser();
 								while($row = mysql_fetch_array($result3)) {					
 							?> 
 							  <tr>							  
-										  <td align="center">
+										  <!--<td align="center">
 										  <a target="_blank" href="print-invoice/invoice-print.php?cid=<?php echo $row['cid']; ?>">
-										  <i class="glyphicon glyphicon-print icon text-dark-lter"></a></td>				  					  
+										  <i class="glyphicon glyphicon-print icon text-dark-lter"></a></td>-->
+										  <td align="center">
+                                            <a target="_blank" href="../../upload/lampiran/<?php echo $row['lampiran1']; ?>">
+                                                <img src="images/print.png" border="0" height="20" width="20"></a>
+                                        </td>
+                                        <td align="center">
+                                            <a target="_blank" href="../../upload/lampiran/<?php echo $row['lampiran2']; ?>">
+                                                <img src="images/print.png" border="0" height="20" width="20"></a>
+                                        </td>
+                                        <td align="center">
+                                            <a target="_blank" href="../../upload/lampiran/<?php echo $row['lampiran3']; ?>">
+                                                <img src="images/print.png" border="0" height="20" width="20"></a></td>
+											<td>
+												<font color="#000"><?php echo $row['cons_no']; ?></font>
+											</td>
+										  
 										  <td><font color="#000"><?php echo $row['cons_no']; ?></font></td>
 										  <td><?php echo $row['ship_name']; ?></td>
 										  <td><?php echo $row['rev_name']; ?></td>

@@ -214,7 +214,7 @@ isUser();
 						$result = mysql_query($sql);
 						$numero1 = mysql_num_rows($result); // get the number of rows
 					?>
-                    <div class="col-xs-6 col-md-3 col-lg-3 col-xl-2">
+                   <!-- <div class="col-xs-6 col-md-3 col-lg-3 col-xl-2">
                         <div class="card-box tilebox-one">
                             <i class="icon-plane pull-xs-right text-muted"></i>
                             <h6 class="text-muted text-uppercase m-b-20">Shipping In Transit</h6>
@@ -326,7 +326,7 @@ isUser();
                 <!-- end row Employee-->
 				
 
-                <div class="row">
+               <div class="row">
                     <div class="col-xs-12 col-lg-12 col-xl-9">
                         <div class="card-box">
 						 <h4 class="header-title m-t-0 m-b-20">Daftar Pengiriman</h4>
@@ -338,7 +338,7 @@ isUser();
                                             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
                                                role="tab" aria-controls="home" aria-expanded="true">
 											   <i class="icon-plane"></i>&nbsp;&nbsp;Daftar Utama Pengiriman</a>
-                                        </li>
+                                        </li> 
 										<?php
 											// Always first connect to the database mysql
 											$sql = "SELECT * FROM courier_online WHERE  status='In-Transit' ";  // sentence sql
@@ -375,7 +375,7 @@ isUser();
 														  <th>Penerima</th>
 														  <th>Tanggal</th>
 														  <th>pegawai</th>
-														  <th> Status</th>
+														  <!--<th> Status</th>-->
 													  </tr>
 													</thead>
 													<?php
@@ -421,15 +421,15 @@ isUser();
                                             <a target="_blank" href="../../upload/lampiran/<?php echo $row['lampiran3']; ?>">
                                                 <img src="images/print.png" border="0" height="20" width="20"></a>
 												<td align="center">
-																 <a  href="barcode/html/BCGcode39.php?cons_no=<?php echo $row['cons_no']; ?>" target="_blank">
+																 <a href="barcode/html/BCGcode39.php?cons_no=<?php echo $row['cons_no']; ?>" target="_blank">
 																  <img src="images/barcode.png" height="20" width="20"></a></td>
 																  <td><font color="#000"><?php echo $row['cons_no']; ?></font></td>
 																  <td><?php echo $row['shipment_type']; ?></td>							 
 																  <td><?php echo $row['ship_name']; ?></td>
 																  <td><?php echo $row['rev_name']; ?></td>
 																  <td><?php echo $row['pick_date']; ?></td>
-																   <td><?php echo $row['user']; ?></td>
-																  <td><span class="label <?php echo $row['status']; ?> label-large"><?php echo $row['status']; ?></span></td>           
+																   <td><?php echo $row['user']; ?></td>	
+																  <!--<td><span class="label <?php echo $row['status']; ?> label-large"><?php echo $row['status']; ?></span></td> -->        
 													  </tr>
 													<?php } ?>
 													</tbody>
@@ -439,32 +439,45 @@ isUser();
 														?>
 													<tbody>
 													  <tr>
-															<?php  					
-																$result3 = mysql_query("SELECT * FROM courier WHERE status != 'delivered' and user='".$_SESSION["user_type"]."' ORDER BY cid DESC");
+													  <?php  					
+																$result3 = mysql_query("SELECT * FROM courier WHERE status != 'delivered'  ORDER BY cid DESC");
 																while($row = mysql_fetch_array($result3)) {					
-															?> 
+															?>
 						
-																  <td class="gentxt" align="center">
+																<td align="center">					
+																  <a href="edit-courier.php?cid=<?php echo $row['cid']; ?>">
+																  <img src="images/edit.png"  height="20" width="20"></a></td>																 
+																<td class="gentxt" align="center">
 																  <a href="process.php?action=delivered&cid=<?php echo $row['cid']; ?>" onclick="return confirm('Sure like to change the status of shipping?');">
-																	<img src="images/delivery.png" height="20" width="20"></a></td>						  
-																  <td align="center">
-																  <a target="_blank" href="print-invoice/invoice-print.php?cid=<?php echo $row['cid']; ?>">
-																  <img src="images/print.png" height="20" width="20"></a></td>
-																  <td align="center">
-																  <a  href="barcode/html/BCGcode39.php?cons_no=<?php echo $row['cons_no']; ?>" target="_blank">
-																  <img src="images/barcode.png" height="20" width="20"></a></td>																  
+																	<img src="images/delivery.png"  height="20" width="20"></a></td>  
+																	<td align="center">
+                                                             <a target="_blank" href="../../upload/lampiran/<?php echo $row['lampiran1']; ?>">
+                                                             <img src="images/print.png" border="0" height="20" width="20"></a>
+                                                              </td>
+                                                               <td align="center">
+                                                               <a target="_blank" href="../../upload/lampiran/<?php echo $row['lampiran2']; ?>">
+                                                               <img src="images/print.png" border="0" height="20" width="20"></a>
+                                                             </td>
+                                                       <td align="center">
+                                                     <a target="_blank" href="../../upload/lampiran/<?php echo $row['lampiran3']; ?>">
+                                                      <img src="images/print.png" border="0" height="20" width="20"></a>
+																	
 																  <td><font color="#000"><?php echo $row['cons_no']; ?></font></td>
-																  <td><?php echo $row['shipment_type']; ?></td>						 
+																  <td><?php echo $row['shipment_type']; ?></td>							 
 																  <td><?php echo $row['ship_name']; ?></td>
 																  <td><?php echo $row['rev_name']; ?></td>
 																  <td><?php echo $row['pick_date']; ?></td>
-																   <td><?php echo $row['user']; ?></td>
-																  <td><span class="label <?php echo $row['status']; ?> label-large"><?php echo $row['status']; ?></span></td>               
+																  <td><?php echo $row['user']; ?></td>
+																 <!-- <td><span class="label <?php echo $row['status']; ?> label-large"><?php echo $row['status']; ?></span> -->
+																
 													  </tr>
-															<?php } ?>
-													</tbody>
+
 													<?php } ?>
+													<?php } ?>
+													</tbody>
+													
 												</table>
+												
                                         </div>
                                         <div class="tab-pane fade" id="profile" role="tabpanel"
                                              aria-labelledby="profile-tab">
@@ -487,7 +500,8 @@ isUser();
 														  <th>Penerima</th>
 														  <th>Ke</th>
 														  <th>Tanggal</th>
-														  <th>Status</th>
+														 <!-- <th>Status</th> -->
+														  
 													  </tr>
 													</thead>
 
@@ -524,7 +538,7 @@ isUser();
 															  <td><FONT SIZE=2><?php echo $row['rev_name']; ?></FONT></td>
 															  <td><FONT SIZE=2><?php echo $row['tocity']; ?></FONT></td>
 															  <td><FONT SIZE=2><?php echo $row['deliverydate']; ?></FONT></td>
-															  <td><span class="label <?php echo $row['status']; ?> label-large"><?php echo $row['status']; ?></span></td>           
+															  <td><span class="label <?php echo $row['status']; ?> label-large"><?php echo $row['status']; ?></span></td>     
 													  </tr>
 														<?php } ?>
 													</tbody>												
@@ -548,7 +562,9 @@ isUser();
                                         <tr>
                                             <th>Tracking</th>
                                             <th>Tanggal dimulai</th>
-                                            <th>Status</th>
+                                            <!--<th>Status</th>-->
+											<th>Type pengiriman</th>
+											<th>Type Pegawai</th>
                                         </tr>
                                     </thead>
 									<tbody>
@@ -559,10 +575,13 @@ isUser();
                                         <tr>
                                             <td><font color="#000"><?php echo $row['cons_no']; ?></font></td>
                                             <td><?php echo $row['book_date']; ?></td>
-                                            <td><span class="label <?php echo $row['status']; ?> label-large"><?php echo $row['status']; ?></span></td>    
+                                            <!--<td><span class="label <?php echo $row['comments']; ?> label-large"><?php echo $row['comments']; ?></span></td>-->
+											<td><?php echo $row['shipment_type']; ?></td>
+											<td><?php echo $row['user']; ?></td>
                                         </tr>
 										<?php } ?> 
                                     </tbody>
+									
                                 </table>
                             </div>
                         </div>

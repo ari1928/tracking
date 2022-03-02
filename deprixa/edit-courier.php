@@ -387,11 +387,11 @@ if ($count > 0) {
 							<table class="table table-bordered m-b-0">
 								<thead>
 									<tr>
-										<th># Tracking</th>
-										<th>LocaSI</th>
-										<th>STATUS</th>
-										<th>Date and Time</th>
-										<th>ObservaSI</th>
+										<th>#Tracking</th>
+										<th>Lokasi</th>
+										<!--<th>Status</th>-->
+										<th>Date</th>
+										<th>Observasi</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -402,7 +402,7 @@ if ($count > 0) {
 										<tr>
 											<td><?php echo $row['cons_no']; ?></td>
 											<td><?php echo $row['pick_time']; ?></td>
-											<td><?php echo $row['status']; ?></td>
+											<!--<td><?php echo $row['status']; ?></td>-->
 											<td><?php echo $row['bk_time']; ?></td>
 											<td><?php echo $row['comments']; ?></td>
 										</tr>
