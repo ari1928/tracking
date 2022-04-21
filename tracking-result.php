@@ -21,12 +21,14 @@ if ($no == 1) {
 		<html>
 
 		<head>
+			
 			<meta charset="utf-8" />
 			<title>PT. Citra Mandiri Trans</title>
 			<meta name="description" content="Courier Deprixa V2.5 " />
 			<meta name="keywords" content="" />
 			<meta name="author" content="">
 			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+			
 			<!--html5 ie include-->
 			<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 			<!--[if lt IE 9]><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
@@ -40,42 +42,172 @@ if ($no == 1) {
 			<link rel="stylesheet" href="deprixa/asset1/css/font-awesome.min.css" type="text/css" media="screen">
 			<link rel="canonical" href="tracking.php" />
 
+			
+                               
+			
+
 			<!-- style -->
+			
 			<link href="deprixa_components/content/cssefe4.css" rel="stylesheet" />
 			<link rel="stylesheet" href="deprixa/css/tracking.css" type="text/css" />
+			
 			<link href="deprixa_components/styles/track-order.css" rel="stylesheet" />
 			<link href="deprixa/css/style.css" rel="stylesheet" media="all">
 			<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
-
+			
+			
+			
+		
 			<style>
-				.Finished {
-					background: #363C56;
-				}
 
-				.Delayed {
-					background: #F76063;
-				}
 
-				.On-Hold {
-					background: #4ECCDB;
-				}
+.container {
+    margin-top: 50px;
+    margin-bottom: 50px
+}
 
-				.Landed {
-					background: #FF8A4B;
-				}
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.10rem
+}
 
-				.label {
-					padding: 6px;
-				}
+.card-header:first-child {
+    border-radius: calc(0.37rem - 1px) calc(0.37rem - 1px) 0 0
+}
 
-				.In-Transit {
-					background: #00D96D;
-				}
+.card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+}
 
-				.Delivered {
-					background: #FFBF00;
-				}
-			</style>
+.track {
+    position: relative;
+    background-color: #ddd;
+    height: 7px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 60px;
+    margin-top: 50px
+}
+
+.track .step {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    width: 25%;
+    margin-top: -18px;
+    text-align: center;
+    position: relative
+}
+
+.track .step.active:before {
+    background: #FF5722
+}
+
+.track .step::before {
+    height: 7px;
+    position: absolute;
+    content: "";
+    width: 100%;
+    left: 0;
+    top: 18px
+}
+
+.track .step.active .icon {
+    background: #ee5435;
+    color: #fff
+}
+
+.track .icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    border-radius: 100%;
+    background: #ddd
+}
+
+.track .step.active .text {
+    font-weight: 400;
+    color: #000
+}
+
+.track .text {
+    display: block;
+    margin-top: 7px
+}
+
+.itemside {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%
+}
+
+.itemside .aside {
+    position: relative;
+    -ms-flex-negative: 0;
+    flex-shrink: 0
+}
+
+.img-sm {
+    width: 80px;
+    height: 80px;
+    padding: 7px
+}
+
+ul.row,
+ul.row-sm {
+    list-style: none;
+    padding: 0
+}
+
+.itemside .info {
+    padding-left: 15px;
+    padding-right: 7px
+}
+
+.itemside .title {
+    display: block;
+    margin-bottom: 5px;
+    color: #212529
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem
+}
+
+.btn-warning {
+    color: #ffffff;
+    background-color: #ee5435;
+    border-color: #ee5435;
+    border-radius: 1px
+}
+
+.btn-warning:hover {
+    color: #ffffff;
+    background-color: #ff2b00;
+    border-color: #ff2b00;
+    border-radius: 1px
+}</style>
 
 		</head>
 
@@ -96,6 +228,7 @@ if ($no == 1) {
 							<div class="mobile-menu-header">Menu</div>
 							<ul>
 								<li class="index.html"><a href="index.html" class="MainNav" data-gacat="index" data-galab="GetAQuote" tabindex="-1">Home</a></li>
+								
 								<li class="deskHide last-mob-link"><a href="javascript:void(0)" class="cl   ose-mob-menu fl pad-top-10">Close &raquo;</a></li>
 							</ul>
 						</nav>
@@ -143,6 +276,8 @@ if ($no == 1) {
 							</div>
 						</div>
 						<hr />
+
+						 
 						<div class="row">
 							<div class="col-md-12">
 								<h2>Additional Information</h2>
@@ -155,7 +290,7 @@ if ($no == 1) {
 										<th> <?php echo $hbl; ?> </th>
 									</tr>
 									<tr>
-										<td>Shipment Type</td>
+										<th>Shipment Type</th>
 										<td> <?php echo $shipment_type; ?></td>
 									</tr>
 									<tr>
@@ -227,37 +362,40 @@ if ($no == 1) {
 
 							//CREAMOS NUESTRA VISTA Y LA DEVOLVEMOS AL AJAX
 
-							echo '<div style="overflow-x:auto;" class="table-responsive"> <table class="table table-bordered table-striped table-hover" >
+							echo '<div style="overflow-x:auto;" class="table-responsive"> 
+									<table class="table table-bordered table-striped table-hover" >
 								<tr class="car_bold col_dark_bold" align="center">
 									<td><font color="Black" face="arial,verdana"><strong>Tracking No</strong></font></td>
 									<td><font color="Black" face="arial,verdana"><strong>Last Location </strong></font></td>
-								<!--<td><font color="Black" face="arial,verdana"><strong>Status</strong></font></td>-->
+								<td><font color="Black" face="arial,verdana"><strong>Status</strong></font></td>
 									<td><font color="Black" face="arial,verdana"><strong>Date / Time</strong></font></td>
-									<td><font color="Black" face="arial,verdana"><strong>Remarks</strong></font></td>																							
+									<td><font color="Black" face="arial,verdana"><strong>Remarks</strong></font></td>																						
 								</tr>';
 							if (mysql_num_rows($result) > 0) {
 								while ($row = mysql_fetch_array($result)) {
 									echo '<tr align="center">
 									<td>' . $row['cons_no'] . '</td>
 									<td>' . $row['pick_time'] . '</td>
-									<!--<td>' . $row['status'] . '</td>-->
+									<td>' . $row['status'] . '</td>
 									<td>' . $row['bk_time'] . '</td>				
 									<td>' . $row['comments'] . '</td>
 									</tr>';
 								}
 							} else {
 								echo '<tr>
-													<td colspan="5" >No results found</td>
-												</tr>';
+								<td colspan="5" >No results found</td>
+									</tr>';
 							}
 							echo '</table></div>';
 							?>
+	
 						</div><!-- .container -->
 					</div>
-
+					</div>
 				</main>
 			</div>
 
+			
 
 			<!-- Footer -->
 			<?php include_once "footer.php"; ?>
@@ -298,6 +436,7 @@ else {
 		<meta name="keywords" content="" />
 		<meta name="author" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		
 
 		<link rel="stylesheet" href="deprixa/asset1/css/font-awesome.min.css" type="text/css" media="screen">
 		<link rel="canonical" href="tracking.php" />

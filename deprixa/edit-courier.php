@@ -352,7 +352,7 @@ if ($count > 0) {
 
 								<!-- Origin Office -->
 								<!--<div class="col-md-4 form-groupform-group">
-									<label for="zipcode" class="control-label">NEW STATE:</label>
+									<label for="stat" class="control-label">NEW STATE:</label>
 									<select name="status" class="form-control">
 										<option value="Finished">Finished</option>
 										<option value="In-Transit">In Transit</option>
@@ -362,6 +362,11 @@ if ($count > 0) {
 									</select> 
 								</div> -->
 								<!-- Comments -->
+								<div class="col-md-4 form-groupform-group">
+									<label class="text-success">NEW STATE <span class="required-field">*</span></label>
+									<input type="text" name="status" class="form-control" id="" placeholder="Masukkan state" required>
+								 </div>
+
 								<div class="col-md-6 form-groupform-group">
 									<label for="message" class="control-label">COMMENTS:</label>
 									<textarea class="form-control" name="comments" id="comments" required></textarea>
@@ -389,9 +394,10 @@ if ($count > 0) {
 									<tr>
 										<th>#Tracking</th>
 										<th>Lokasi</th>
-										<!--<th>Status</th>-->
+										<th>Status</th>
 										<th>Date</th>
 										<th>Observasi</th>
+										
 									</tr>
 								</thead>
 								<tbody>
@@ -402,11 +408,11 @@ if ($count > 0) {
 										<tr>
 											<td><?php echo $row['cons_no']; ?></td>
 											<td><?php echo $row['pick_time']; ?></td>
-											<!--<td><?php echo $row['status']; ?></td>-->
+											<td><?php echo $row['status']; ?></td>
 											<td><?php echo $row['bk_time']; ?></td>
 											<td><?php echo $row['comments']; ?></td>
 										</tr>
-									<?php } ?>
+									<?php } ?>	
 								</tbody>
 							</table>
 						</div>

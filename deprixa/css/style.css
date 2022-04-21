@@ -159,13 +159,13 @@
 	margin: 0px 0px 0px 13px;
 }
 .top_nav .right li:hover i {
-	color: #ff6e41;
+	color: #1018f8;
 }
 .top_nav .right li a {
 	color: #999;
 }
 .top_nav .right li a:hover {
-	color: #ff6e41;
+	color: #210af0;
 }
 .top_nav .right li.link {
 	float: left;
