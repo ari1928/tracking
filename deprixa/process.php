@@ -3,6 +3,7 @@
 
 session_start();
 require_once('database.php');
+date_default_timezone_set("Asia/Bangkok");
 
 $action = $_GET['action'];
 
@@ -315,7 +316,7 @@ function addcourier_update()
 	$lampiran1 = time() . '-' . $_FILES['lampiran1']['name'];
 	$temp1 = $_FILES['lampiran1']['tmp_name'];
 	$path1 = '../upload/lampiran/' . $lampiran1;
-	move_uploaded_file($temp1, $path);
+	move_uploaded_file($temp1, $path1);
 	$lampiran2 = time() . '-' . $_FILES['lampiran2']['name'];
 	$temp2 = $_FILES['lampiran2']['tmp_name'];
 	$path2 = '../upload/lampiran/' . $lampiran2;

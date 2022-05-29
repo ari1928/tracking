@@ -7,7 +7,8 @@ include "parser_php_version.php"; //Konversi dan migrasi PHP version
 $dbHost = 'localhost';
 $dbUser = 'root';
 $dbPass = '';
-$dbName = 'projek';
+$dbName = 'project_logistik_native_mei';
+date_default_timezone_set("Asia/Bangkok");
 
 $dbConn = mysql_connect ($dbHost, $dbUser, $dbPass) or die ('MySQL connect failed. ' . mysql_error());
 mysql_select_db($dbName) or die('Cannot select database. ' . mysql_error());
