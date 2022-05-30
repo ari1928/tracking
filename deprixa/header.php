@@ -148,12 +148,16 @@ isUser();
                             <a href="admin.php"><i class="zmdi zmdi-view-dashboard"></i> <span> Dashboard </span> </a>
                         </li>
                         <?php
-                        if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'Administrator') {
+                        if ($_SESSION['user_type'] == 'Superadmin' || $_SESSION['user_type'] == 'Administrator') {
                         ?>
                             <li class="has-submenu">
                                 <a href="#"><i class="fa fa-users"></i> <span> MANAJEMEN AKUN </span> </a>
                                 <ul class="submenu">
-                                    <li><a href="add-new-users-admin.php"><i class="fa fa-users"></i>&nbsp;&nbsp;Akun Administrator</a></li>
+                                    <?php
+                                    if ($_SESSION['user_type'] == 'Superadmin') {
+                                    ?>
+                                        <li><a href="add-new-users-admin.php"><i class="fa fa-users"></i>&nbsp;&nbsp;Akun Administrator</a></li>
+                                    <?php } ?>
                                     <li><a href="add-new-users.php"><i class="fa fa-users"></i>&nbsp;&nbsp;Akun Pegawai</a></li>
                                     <li><a href="customer.php"><i class="fa fa-user-plus"></i>&nbsp;&nbsp;Akun Pelanggan</a></li>
                                 </ul>

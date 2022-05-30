@@ -4,6 +4,7 @@
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 session_start();
 require_once('../../database.php');
+require_once('../../library.php');
 
 
 $name_parson = $_POST['name_parson'];

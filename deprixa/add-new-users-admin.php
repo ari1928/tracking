@@ -44,7 +44,7 @@ isUser();
 	  <link rel="stylesheet" href="css/footer-basic-centered.css">
   
 </head>
-<body onload="viewdata()">
+<body>
 <?php
 include("header.php");
 ?>

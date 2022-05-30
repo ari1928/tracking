@@ -112,7 +112,10 @@ var treload = $('#tabla-usuarios').DataTable({
     "targets": 8,
     "data": "cid", // campo a recuperar en esta columnas id del usuario
     "render": function ( data, type, full ) { // renderisado de datos creamos los botones de editar, estado y eliminar
-      return '<button type="button" class="btn btn-sm btn-default editar" cid="'+full['cid']+'" data-toggle="modal" data-target="#editar"><i class="fa fa-pencil"></i></button> <button type="button" class="btn btn-sm btn-default estado" cid="'+full['cid']+'"><i class="fa fa-shield"></i></button> <button type="button" class="btn btn-sm btn-default eliminar" cid="'+full['cid']+'"><i class="fa fa-trash"></i></button>';
+		if (full['cid'] != 1) {
+			return '<button type="button" class="btn btn-sm btn-default editar" cid="'+full['cid']+'" data-toggle="modal" data-target="#editar"><i class="fa fa-pencil"></i></button> <button type="button" class="btn btn-sm btn-default estado" cid="'+full['cid']+'"><i class="fa fa-shield"></i></button> <button type="button" class="btn btn-sm btn-default eliminar" cid="'+full['cid']+'"><i class="fa fa-trash"></i></button>';
+		}
+		return '';
     }	
   	
 	}

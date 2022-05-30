@@ -42,7 +42,7 @@ require_once('deprixa/library.php');
             <header class="mpdHeader">
                 <a href='index.html' class="mpd-logo" tabindex="-1">
                     <div><span class=""></span></div>
-                    <div class="mpd-logo-text"><img src="deprixa/images/citra-logo.png"width="200%"/></div>
+                    <div class="mpd-logo-text"><img src="deprixa/images/Citra-logo.png"width="200%"/></div>
                 </a><!-- logo -->
 
                 <div class="login-status">
@@ -115,9 +115,9 @@ require_once('deprixa/library.php');
                                 <li>Update Pengantaran dan Permintaan Pengantaran Untuk Kamu.</li>
                                 <li>Extra Keuntungan + Termasuk cashback untuk Booking Selanjutnya.</li>
                             </ul>
-                            <a href='signup.php' class="btn btn-primary pull-right" role="button">
+                         <!--  <a href='signup.php' class="btn btn-primary pull-right" role="button">
                                 DAFTAR
-                            </a>
+                            </a> -->
                         </div>
                     </div>
                 </div>
