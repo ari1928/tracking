@@ -383,7 +383,6 @@ function addcourier_update()
 						window.location = \"admin.php\"
 					</script>";
 
-	//echo $Ship;
 } //addcourier_update
 
 
