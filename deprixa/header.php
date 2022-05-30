@@ -102,7 +102,7 @@ isUser();
                             <div class="dropdown-menu dropdown-menu-right dropdown-arrow profile-dropdown " aria-labelledby="Preview">
                                 <!-- item-->
                                 <div class="dropdown-item noti-title">
-                                    <h5 class="text-overflow"><small>Selamat Datang ! <?php echo $_SESSION['user_type']; ?></small> </h5>
+                                    <h5 class="text-overflow"><small><?php echo $_SESSION['user_type']; ?></small> </h5>
                                 </div>
                                 <?php
                                 if (isset($_SESSION['user_type']) && $_SESSION['user_type'] =='Administrator' || $_SESSION['user_type'] == 'Superadmin') {
