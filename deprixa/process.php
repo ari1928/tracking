@@ -830,6 +830,9 @@ function updateStatus()
 	$sql_1 = "UPDATE courier SET status='$status', pick_time='$pick_time' WHERE cid = $cid AND cons_no = '$cons_no'";
 	dbQuery($sql_1);
 
+	// add log
+	addLog('Update', 'Update Status Pengiriman '. $status.' ' . $cons_no . ' ', $_SESSION['user_name'], $_SESSION['user_type']);
+
 	header("Location: edit-courier.php?cid=$cid");
 } //updateStatus
 

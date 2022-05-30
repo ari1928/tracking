@@ -49,7 +49,8 @@ else{
 	else{
 	$consulta = "UPDATE tbl_clients SET name='$name',  address='$address', email='$email', phone='$phone', password='$password', estado='$estado' WHERE id='$id'";	
 	}
-
+	// 
+	addLog('Update', 'Update data Client ' . $name . ' ', $_SESSION['user_name'], $_SESSION['user_type']);	
 }
 
 // enviamos la consulta al método query

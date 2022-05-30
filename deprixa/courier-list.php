@@ -103,7 +103,7 @@ isUser();
 					
 					  <td class="gentxt" align="center">
 					  <?php
-						if(isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'Administrator') {
+						if(isset($_SESSION['user_type']) && $_SESSION['user_type'] =='Administrator' || $_SESSION['user_type'] == 'Superadmin') {
 						?>
 					  <a href="edit-courier.php?cid=<?php echo $cid; ?>">
 					  <img src="images/edit.png" border="0" height="15" width="15"></a></td>

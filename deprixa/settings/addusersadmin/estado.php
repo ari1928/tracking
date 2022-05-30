@@ -3,6 +3,7 @@
  
 
 include('../../database-settings.php');
+include('../../library.php');
 // asignamos la función de conexion a una variable
 $con = conexion();
 // recuperamos el id del usuario enviado por ajax
@@ -24,6 +25,7 @@ else{
 }
 // pasamos la consulta según el resultado de la verificación
 $con->query($q);
+addLog('Update', 'Update data admin ' . $id . ' ', $_SESSION['user_name'], $_SESSION['user_type']);	
 // retornamos un mensaje de confirmación
 echo json_encode(array('msg' => 'ok'));
 

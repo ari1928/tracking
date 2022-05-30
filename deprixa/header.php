@@ -105,7 +105,7 @@ isUser();
                                     <h5 class="text-overflow"><small>Selamat Datang ! <?php echo $_SESSION['user_type']; ?></small> </h5>
                                 </div>
                                 <?php
-                                if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'Administrator') {
+                                if (isset($_SESSION['user_type']) && $_SESSION['user_type'] =='Administrator' || $_SESSION['user_type'] == 'Superadmin') {
                                 ?>
                                     <!-- item-->
                                     <a href="preferences.php" class="dropdown-item notify-item">
@@ -148,7 +148,7 @@ isUser();
                             <a href="admin.php"><i class="zmdi zmdi-view-dashboard"></i> <span> Dashboard </span> </a>
                         </li>
                         <?php
-                        if ($_SESSION['user_type'] == 'Superadmin' || $_SESSION['user_type'] == 'Administrator') {
+                        if ($_SESSION['user_type'] == 'Superadmin' || $_SESSION['user_type'] =='Administrator' || $_SESSION['user_type'] == 'Superadmin') {
                         ?>
                             <li class="has-submenu">
                                 <a href="#"><i class="fa fa-users"></i> <span> MANAJEMEN AKUN </span> </a>
@@ -200,7 +200,7 @@ isUser();
                             </ul>
                         </li>
                         <?php
-                        if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'Administrator') {
+                        if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'Administrator' || $_SESSION['user_type'] == 'Superadmin') {
                         ?>
                             <li class="has-submenu">
                                 <a> <span> | </span> </a>

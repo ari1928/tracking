@@ -127,7 +127,7 @@ isUser();
 								</tr>
 							</thead>
 							<?php
-							if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'Administrator') {
+							if (isset($_SESSION['user_type']) && $_SESSION['user_type'] =='Administrator' || $_SESSION['user_type'] == 'Superadmin') {
 							?>
 								<tbody>
 

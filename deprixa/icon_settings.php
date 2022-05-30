@@ -10,7 +10,7 @@
                                     data-toggle="dropdown" aria-expanded="false">Settings <span class="m-l-5"><i
                                     class="fa fa-cog"></i></span></button>
 							<?php
-								if(isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'Administrator') {
+								if(isset($_SESSION['user_type']) && $_SESSION['user_type'] =='Administrator' || $_SESSION['user_type'] == 'Superadmin') {
 							?>		
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="service_mode.php"><i class="fa fa-gift"></i>&nbsp;Tipe Produk</a>

@@ -97,7 +97,7 @@ require_once('library.php');
 									  <?php } ?>
 									  
 									    <?php
-											if(isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'Administrator') {
+											if(isset($_SESSION['user_type']) && $_SESSION['user_type'] =='Administrator' || $_SESSION['user_type'] == 'Superadmin') {
 										?>
 									  &nbsp;&nbsp;  
 									   <a href="#" onclick="del_list_online(<?php echo $row['id']; ?>);">

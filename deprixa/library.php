@@ -5,14 +5,17 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 require_once('database.php');
 require_once('funciones.php');
-function verify_users($user='',$pwd='', $estado='') {	
-		
-			$sql = "SELECT *	FROM manager_admin WHERE name = '$user' AND pwd = '$pwd' AND estado = '1'";
-			$result = dbQuery($sql);		
-			$no = dbNumRows($result);		
+function verify_users($user='',$pwd='', $estado='') {
+
+			$con = conexion();
+			$sql = "SELECT * FROM manager_admin WHERE name = '$user' AND pwd = '$pwd' AND estado = '1'";
+			$result = $con->query($sql);
+			$row = $result->fetch_assoc();
+			$resultno = dbQuery($sql);	
+			$no = dbNumRows($resultno);		
 			if($no >= 1) {
-					$_SESSION['user_name']= $user;	
-					$_SESSION['user_type']= 'Administrator';
+					$_SESSION['user_name']= $row['name_parson'];	
+					$_SESSION['user_type']= $row['role'];
 					echo '<div class="alert alert-succes" role="alert" align="center">
 					<strong>Welcome<br><br>'.$user.'</strong></div>';
 					echo '<center><img src="deprixa/images/balls.gif"></center><br>';
