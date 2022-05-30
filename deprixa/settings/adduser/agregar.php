@@ -4,6 +4,7 @@
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 session_start();
 require_once('../../database.php');
+require_once('../../library.php');
 
 
 	$name_parson = $_POST['name_parson'];
@@ -26,7 +27,8 @@ require_once('../../database.php');
 	$type = 0;
 
 	$sql1 =mysql_query("SELECT email,name FROM manager_user WHERE email='$email' OR name='$name'");
-			if($row=mysql_fetch_array($sql1)){							
+			if($row=mysql_fetch_array($sql1)){
+				addLog('Create', 'Gagal! Create data admin ' . $name_parson . ' ', $_SESSION['user_name'], $_SESSION['user_type']);
 				 echo "<script type=\"text/javascript\">
 						alert(\"The email $email and name of user $name already is are registered in the database, by Please enter data different, thank you.\");
 						window.location = \"../../add-new-users.php\"
@@ -34,12 +36,11 @@ require_once('../../database.php');
 			}else{
 				$sql1="INSERT INTO manager_user (name_parson,name,email,phone,office,role,pwd,estado,type,date) VALUES 	
 				('$name_parson','$name','$email','$phone','$office','$role','$pwd','$estado','$type',curdate())";
+				addLog('Create', 'Berhasil! Create data admin ' . $name_parson . ' ', $_SESSION['user_name'], $_SESSION['user_type']);
 			}
 	dbQuery($sql1);
 	
 	echo "<script type=\"text/javascript\">
 						alert(\"Thank you very much for registering.\");
 						window.location = \"../../add-new-users.php\"
-					</script>"; 
-
-?>
+					</script>";

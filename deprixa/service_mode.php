@@ -1,21 +1,21 @@
-<?php 
- 
+<?php
+
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 session_start();
 require_once('database-settings.php');
 require_once('database.php');
 require_once('library.php');
-isUser();	
+isUser();
 ?>
 
 <!DOCTYPE html>
 <html>
- 
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Page Description and Author -->
-	<meta name="description" content=""/>
+	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta name="author" content="">
 
@@ -24,13 +24,13 @@ isUser();
 
 	<!-- App title -->
 	<title>PT. Citra Mandiri Trans</title>
-	
-	<!-- Switchery css -->
-    <link href="assets/plugins/switchery/switchery.min.css" rel="stylesheet" />
 
-    <!-- App CSS -->
+	<!-- Switchery css -->
+	<link href="assets/plugins/switchery/switchery.min.css" rel="stylesheet" />
+
+	<!-- App CSS -->
 	<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
-    
+
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" type="text/css" />
 	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" type="text/css" />
 	<link rel="stylesheet" href="bower_components/simple-line-icons/css/simple-line-icons.css" type="text/css" />
@@ -39,219 +39,223 @@ isUser();
 	<link href="js/css/dataTables.bootstrap.css" rel="stylesheet">
 	<link href="js/plugins/sweetalert/css/sweetalert.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/footer-basic-centered.css">
-  
+
 </head>
+
 <body>
-<?php
-include("header.php");
-?>
+	<?php
+	include("header.php");
+	?>
 
-<!-- ============================================================== -->
-        <!-- Start right Content here -->
-        <!-- ============================================================== -->
-        <div class="wrapper">
-            <div class="container">
+	<!-- ============================================================== -->
+	<!-- Start right Content here -->
+	<!-- ============================================================== -->
+	<div class="wrapper">
+		<div class="container">
 
-                <!-- Page-Title -->
-				<?php
-				include("icon_settings.php");
-				?>
+			<!-- Page-Title -->
+			<?php
+			include("icon_settings.php");
+			?>
 
-		        <div class="row">
-                    <div class="col-sm-12">
-                        <div class="card-box table-responsive">
-							<table border="0" align="center" width="100%">
-								  <tr>
-								  <td class="TrackTitle" valign="top"><div  align=""><h3 class="classic-title1"><span><strong></strong></span></h3>
-								</tr>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="card-box table-responsive">
+						<table border="0" align="center" width="100%">
+							<tr>
+								<td class="TrackTitle" valign="top">
+									<div align="">
+										<h3 class="classic-title1"><span><strong></strong></span></h3>
+							</tr>
 							<div class="row">
-									<div class="col-xs-12" align="center">
+								<div class="col-xs-12" align="center">
 									<h2>Tambah tipe Pengiriman Baru</h2>
 									<br>
-									</div>
 								</div>
+							</div>
 
-								<div class="row">
-									<div class="col-xs-12">
+							<div class="row">
+								<div class="col-xs-12">
 									<!--Botones principales-->
 									<button type="button" class="btn btn-md btn-success" data-toggle="modal" data-target="#nuevo"><i class="fa fa-user-plus"></i>
-									 Tipe Pengiriman Baru</button>
-									 <button type="button" class="btn btn-md btn-info" id="recarga"><i class="fa fa-refresh"></i>
-									 Untuk Diperbarui</button>
-									</div>
+										Tipe Pengiriman Baru</button>
+									<button type="button" class="btn btn-md btn-info" id="recarga"><i class="fa fa-refresh"></i>
+										Untuk Diperbarui</button>
+								</div>
 								<div class="col-xs-12">
-								<div class="table">
-								<br>
-								<!--Inicio de tabla usuarios-->
-								<table id="tabla-usuarios" class="table table-striped table-bordered" cellspacing="0" width="100%">
-								<!--encabezado tabla-->
-								<thead>
-											<tr>
-												<th>Nama Pengiriman</th>
-												<th>Pelayanan/Service</th>
-												<th>Waktu Pngiriman</th>
-												<th>observasi</th>									
-												<th>Status</th>
-												<th>Aksi</th>
-											</tr>
-										</thead>
+									<div class="table">
+										<br>
+										<!--Inicio de tabla usuarios-->
+										<table id="tabla-usuarios" class="table table-striped table-bordered" cellspacing="0" width="100%">
+											<!--encabezado tabla-->
+											<thead>
+												<tr>
+													<th>Nama Pengiriman</th>
+													<th>Pelayanan/Service</th>
+													<th>Waktu Pngiriman</th>
+													<th>observasi</th>
+													<th>Status</th>
+													<th>Aksi</th>
+												</tr>
+											</thead>
 
-								</table>
-								<!--fin de tabla-->
+										</table>
+										<!--fin de tabla-->
 
+									</div>
 								</div>
-								</div>
-								</div>
+							</div>
 
 
-								<!-- Modal nuevo usuario -->
-								<div class="modal fade" id="nuevo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-								  <div class="modal-dialog">
+							<!-- Modal nuevo usuario -->
+							<div class="modal fade" id="nuevo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
 									<div class="modal-content">
-									  <div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Tutup</span></button>
-										<h4 class="modal-title" id="myModalLabel"><i class="fa fa-user-plus"></i> Tipe Pengiriman Baru</h4>
-									  </div>
-									  <div class="modal-body">
-									  <!--Cuerpo del modal aquí el formulario-->
-												   <form class="form-horizontal" id="formularioNuevo">
-								  <div class="form-group " id="gnombre">
-									<label for="name" class="col-sm-2 control-label">Nama Pengiriman </label>
-									<div class="col-sm-10">
-									  <input type="text" class="form-control name" name="name"  placeholder="Name Shipments">
-									</div>
-								  </div>
-								  <div class="form-group" id="gapellido">
-									<label for="services" class="col-sm-2 control-label">Pelayanan/Services </label>
-									<div class="col-sm-10">
-									  <input type="text" class="form-control services" name="services"   placeholder="Services ">
-									</div>
-								  </div>
-								  <div class="form-group" id="gtelefono">
-									<label for="delivery_time" class="col-sm-2 control-label">Waktu Dikirim</label>
-									<div class="col-sm-10">
-									  <input class="form-control delivery_time" name="deliverytime" placeholder="Delivery Time">						
-									  
-									</div>
-								  </div>
-								  <div class="form-group" id="gemail">
-									<label for="observations" class="col-sm-2 control-label">Observasi</label>
-									<div class="col-sm-10">
-									  <input type="text" class="form-control observations" name="observations"  placeholder="Observations">
-									</div>
-								  </div>					  
-								  <div class="form-group">
-									<div class="col-sm-offset-2 col-sm-10">
-										<div class="checkbox checkbox-success">
-											<input id="checkbox3" type="checkbox" name="estado" value="1" checked>
-											<label for="checkbox3">
-												Berhasil
-											</label>
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Tutup</span></button>
+											<h4 class="modal-title" id="myModalLabel"><i class="fa fa-user-plus"></i> Tipe Pengiriman Baru</h4>
+										</div>
+										<div class="modal-body">
+											<!--Cuerpo del modal aquí el formulario-->
+											<form class="form-horizontal" id="formularioNuevo">
+												<div class="form-group " id="gnombre">
+													<label for="name" class="col-sm-2 control-label">Nama Pengiriman </label>
+													<div class="col-sm-10">
+														<input type="text" class="form-control name" name="name" placeholder="Name Shipments">
+													</div>
+												</div>
+												<div class="form-group" id="gapellido">
+													<label for="services" class="col-sm-2 control-label">Pelayanan/Services </label>
+													<div class="col-sm-10">
+														<input type="text" class="form-control services" name="services" placeholder="Services ">
+													</div>
+												</div>
+												<div class="form-group" id="gtelefono">
+													<label for="delivery_time" class="col-sm-2 control-label">Waktu Dikirim</label>
+													<div class="col-sm-10">
+														<input class="form-control delivery_time" name="deliverytime" placeholder="Delivery Time">
+
+													</div>
+												</div>
+												<div class="form-group" id="gemail">
+													<label for="observations" class="col-sm-2 control-label">Observasi</label>
+													<div class="col-sm-10">
+														<input type="text" class="form-control observations" name="observations" placeholder="Observations">
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="col-sm-offset-2 col-sm-10">
+														<div class="checkbox checkbox-success">
+															<input id="checkbox3" type="checkbox" name="estado" value="1" checked>
+															<label for="checkbox3">
+																Berhasil
+															</label>
+														</div>
+													</div>
+												</div>
+
+											</form>
+											<!--Fin del cuerpo del modal-->
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>
+												Tutup</button>
+											<button type="button" id="guardarNuevo" class="btn btn-primary"><i class="fa fa-floppy-o"></i>
+												Simpan</button>
 										</div>
 									</div>
-								  </div>
-								  
-								</form>
-								<!--Fin del cuerpo del modal-->
-									  </div>
-									  <div class="modal-footer">
-										<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>
-								 Tutup</button>
-										<button type="button" id="guardarNuevo" class="btn btn-primary"><i class="fa fa-floppy-o"></i>
-								 Simpan</button>
-									  </div>
-									</div>
-								  </div>
 								</div>
-								<!--fin de modal nuevo usuario-->
+							</div>
+							<!--fin de modal nuevo usuario-->
 
 
-								<!-- Modal para editar Usuario -->
-								<div class="modal fade" id="editar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-								  <div class="modal-dialog">
+							<!-- Modal para editar Usuario -->
+							<div class="modal fade" id="editar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
 									<div class="modal-content">
-									  <div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Tutup</span></button>
-										<h4 class="modal-title" id="myModalLabel"><i class="fa fa-pencil-square-o"></i>
-								 Edit Tipe Pengiriman</h4>
-									  </div>
-									  <div class="modal-body">
-								<!--Cuerpo del modal aquí el formulario-->
-									<form class="form-horizontal" id="formularioEditar">
-								  <div class="form-group" id="Enombre">
-									<label for="name" class="col-sm-2 control-label">Nama Pengiriman  </label>
-									<div class="col-sm-10">
-									  <input type="text" class="form-control name" name="name" placeholder="Name Shipments ">
-									</div>
-								  </div>
-								  <div class="form-group" id="Eapellido">
-									<label for="services" class="col-sm-2 control-label">Pelayanan/Services </label>
-									<div class="col-sm-10">
-									  <input type="text" class="form-control services" name="services" placeholder="Services ">
-									</div>
-								  </div>
-								  <div class="form-group" id="Etelefono">
-									<label for="delivery_time" class="col-sm-2 control-label">Waktu Dikirim</label>
-									<div class="col-sm-10">
-									  <input class="form-control delivery_time" name="deliverytime" placeholder="Delivery Time ">							
-									</div>
-								  </div>
-								  <div class="form-group" id="Eemail">
-									<label for="observations" class="col-sm-2 control-label">Observasi</label>
-									<div class="col-sm-10">
-									  <input type="text" class="form-control observations" name="observations"  placeholder="Observations ">
-									</div>
-								  </div>					  
-								  <div class="form-group">
-									<div class="col-sm-offset-2 col-sm-10">
-										<div class="checkbox checkbox-success">
-											<input id="checkbox3" type="checkbox" name="estado" value="1" >
-											<label for="checkbox3">
-												Berhasil
-											</label>
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Tutup</span></button>
+											<h4 class="modal-title" id="myModalLabel"><i class="fa fa-pencil-square-o"></i>
+												Edit Tipe Pengiriman</h4>
+										</div>
+										<div class="modal-body">
+											<!--Cuerpo del modal aquí el formulario-->
+											<form class="form-horizontal" id="formularioEditar">
+												<div class="form-group" id="Enombre">
+													<label for="name" class="col-sm-2 control-label">Nama Pengiriman </label>
+													<div class="col-sm-10">
+														<input type="text" class="form-control name" name="name" placeholder="Name Shipments ">
+													</div>
+												</div>
+												<div class="form-group" id="Eapellido">
+													<label for="services" class="col-sm-2 control-label">Pelayanan/Services </label>
+													<div class="col-sm-10">
+														<input type="text" class="form-control services" name="services" placeholder="Services ">
+													</div>
+												</div>
+												<div class="form-group" id="Etelefono">
+													<label for="delivery_time" class="col-sm-2 control-label">Waktu Dikirim</label>
+													<div class="col-sm-10">
+														<input class="form-control delivery_time" name="deliverytime" placeholder="Delivery Time ">
+													</div>
+												</div>
+												<div class="form-group" id="Eemail">
+													<label for="observations" class="col-sm-2 control-label">Observasi</label>
+													<div class="col-sm-10">
+														<input type="text" class="form-control observations" name="observations" placeholder="Observations ">
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="col-sm-offset-2 col-sm-10">
+														<div class="checkbox checkbox-success">
+															<input id="checkbox3" type="checkbox" name="estado" value="1">
+															<label for="checkbox3">
+																Berhasil
+															</label>
+														</div>
+													</div>
+												</div>
+												<!--campo oculto-->
+												<input type="hidden" name="id" id="id_user">
+											</form>
+											<!--Fin del cuerpo del modal-->
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+											<button type="button" id="actualizar" class="btn btn-primary">Simpan</button>
 										</div>
 									</div>
-								  </div>
-								  <!--campo oculto-->
-								  <input type="hidden" name="id" id="id_user">
-								</form>   
-								<!--Fin del cuerpo del modal-->  
-									  </div>
-									  <div class="modal-footer">
-										<button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
-										<button type="button" id="actualizar" class="btn btn-primary">Simpan</button>
-									  </div>
-									</div>
-								  </div>
 								</div>
-								<!--fin de modal nuevo usuario-->
-                        </div>
-                    </div>
-                </div>
-                <!-- end row -->
-		
-		<!-- Footer -->
-		<?php
+							</div>
+							<!--fin de modal nuevo usuario-->
+					</div>
+				</div>
+			</div>
+			<!-- end row -->
+
+			<!-- Footer -->
+			<?php
 			include("footer.php");
-		?>
-		<!-- End Footer -->
+			?>
+			<!-- End Footer -->
 
-         </div> <!-- container -->
-        </div> <!-- End wrapper -->
- 
-		<script type='text/javascript' src="js/jquery.js"></script>
-		<script type='text/javascript' src="js/bootstrap.min.js"></script> 
-		<script type='text/javascript' src="plugins/DataTables/js/jquery.dataTables.js"></script>
-		<script type='text/javascript' src="plugins/DataTables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
-		<script type='text/javascript' src="js/dataTables.bootstrap.js"></script> 
-		<script type='text/javascript' src="plugins/bootstrap-notify/bootstrap-notify.min.js"></script> 
-		<script type='text/javascript' src="plugins/sweetalert/js/sweetalert.min.js"></script>  
+		</div> <!-- container -->
+	</div> <!-- End wrapper -->
 
-		<script type='text/javascript' src="js/modebookings.js"></script>
-		
-		<!-- App js -->
-        <script src="assets/js/jquery.core.js"></script>
-        <script src="assets/js/jquery.app.js"></script>
+	<script type='text/javascript' src="js/jquery.js"></script>
+	<script type='text/javascript' src="js/bootstrap.min.js"></script>
+	<script type='text/javascript' src="plugins/DataTables/js/jquery.dataTables.js"></script>
+	<script type='text/javascript' src="plugins/DataTables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+	<script type='text/javascript' src="js/dataTables.bootstrap.js"></script>
+	<script type='text/javascript' src="plugins/bootstrap-notify/bootstrap-notify.min.js"></script>
+	<script type='text/javascript' src="plugins/sweetalert/js/sweetalert.min.js"></script>
 
-  </body>
-</html> 
+	<script type='text/javascript' src="js/modebookings.js"></script>
+
+	<!-- App js -->
+	<script src="assets/js/jquery.core.js"></script>
+	<script src="assets/js/jquery.app.js"></script>
+
+</body>
+
+</html>

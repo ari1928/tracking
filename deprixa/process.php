@@ -3,6 +3,7 @@
 
 session_start();
 require_once('database.php');
+require_once('library.php');
 date_default_timezone_set("Asia/Bangkok");
 
 $action = $_GET['action'];
@@ -197,6 +198,9 @@ function addCons()
 	//echo $sql;
 	dbQuery($sql);
 
+	// add log
+	addLog('Create', 'Create Pengiriman ' . $hbl . ' ', $_SESSION['user_name'], $_SESSION['user_type']);
+
 
 	$result1 =  mysql_query("SELECT * FROM company");
 	while ($row = mysql_fetch_array($result1)) {
@@ -371,6 +375,8 @@ function addcourier_update()
                        WHERE cid = '$cid'";
 	//echo $sql;
 	dbQuery($sql);
+	// add log
+	addLog('Update', 'Update Pengiriman ' . $hbl . ' ', $_SESSION['user_name'], $_SESSION['user_type']);
 
 	echo "<script type=\"text/javascript\">
 						alert(\"Updates applied successfuly.\");

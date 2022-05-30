@@ -2,6 +2,7 @@
 
  
 include('../../database-settings.php');
+require_once('../../library.php');
 // asignamos la función de conexion a una variable
 $con = conexion();
 // recuperamos el id del off_name enviado por ajax
@@ -44,6 +45,9 @@ else{
 	$password = md5($password); // encriptamos la nueva contraseña
 	$consulta = "UPDATE mode_bookings SET name='$name', services='$services', deliverytime='$deliverytime', observations='$observations', estado='$estado' WHERE id='$id'";	
 	}
+
+	// add log
+	addLog('Update', 'Update Tipe Pengiriman ' . $name . ' ', $_SESSION['user_name'], $_SESSION['user_type']);
 
 }
 

@@ -13,8 +13,9 @@ global $DB_NAME;
 $DB_HOST = 'localhost';
 $DB_USER = 'root';
 $DB_PASSWORD = '';
-$DB_NAME = 'projek';
+$DB_NAME = 'project_logistik_native_mei';
 
+session_start();
 $mysqli = @new mysqli($DB_HOST, $DB_USER, $DB_PASSWORD, $DB_NAME); 
  if (mysqli_connect_errno()) {
     printf(error_db_connect());

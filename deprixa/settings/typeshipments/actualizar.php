@@ -2,6 +2,7 @@
 
 
 include('../../database-settings.php');
+require_once('../../library.php');
 // asignamos la función de conexion a una variable
 $con = conexion();
 // recuperamos el id del off_name enviado por ajax
@@ -40,6 +41,8 @@ else{
 	$consulta = "UPDATE type_shipments SET name='$name', packaging='$packaging', dimensions='$dimensions', estado='$estado' WHERE id='$id'";	
 	}
 
+	// add log
+	addLog('Update', 'Update Tipe Produk ' . $name . ' ', $_SESSION['user_name'], $_SESSION['user_type']);
 }
 
 // enviamos la consulta al método query

@@ -3,6 +3,7 @@
  
 
 include('../../database-settings.php');
+require_once('../../library.php');
 // asignamos la función de conexion a una variable
 $con = conexion();
 // recuperamos el id del off_name enviado por ajax
@@ -53,8 +54,10 @@ else{
 	$consulta = "UPDATE offices SET off_name='$off_name', address='$address', city='$city', ph_no='$ph_no', office_time='$office_time', contact_person='$contact_person', estado='$estado' WHERE id='$id'";
 	else{
 	$password = md5($password); // encriptamos la nueva contraseña
-	$consulta = "UPDATE offices SET off_name='$off_name', address='$address', city='$city', ph_no='$ph_no', office_time='$office_time', contact_person='$contact_person', estado='$estado' WHERE id='$id'";	
+	$consulta = "UPDATE offices SET off_name='$off_name', address='$address', city='$city', ph_no='$ph_no', office_time='$office_time', contact_person='$contact_person', estado='$estado' WHERE id='$id'";
 	}
+	// add log
+	addLog('Update', 'Update Kantor seting ' . $off_name . ' ', $_SESSION['user_name'], $_SESSION['user_type']);
 
 }
 

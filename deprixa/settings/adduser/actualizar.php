@@ -1,8 +1,7 @@
 <?php
-
- 
-
+session_start();
 include('../../database-settings.php');
+require_once('../../library.php');
 // asignamos la función de conexion a una variable
 $con = conexion();
 // recuperamos el id del off_name enviado por ajax
@@ -49,11 +48,13 @@ elseif(empty($pwd)){
 
 else{	
 	// verificamos si esta cambiando el password
-	if(empty($password)) // actualizamos la información del off_name hacemos una consulta SQL
+	if(empty($password)){ // actualizamos la información del off_name hacemos una consulta SQL
 	$consulta = "UPDATE manager_user SET name='$name', email='$email', phone='$phone', office='$office', role='$role', pwd='$pwd', estado='$estado' WHERE cid='$cid'";
-	else{
+		addLog('Update', 'Update data Pegawai ' . $name . ' ', $_SESSION['user_name'], $_SESSION['user_type']);
+	}else{
 	$password = md5($password); // encriptamos la nueva contraseña
-	$consulta = "UPDATE manager_user SET name='$name', email='$email', phone='$phone', office='$office', role='$role', pwd='$pwd', estado='$estado' WHERE cid='$cid'";	
+	$consulta = "UPDATE manager_user SET name='$name', email='$email', phone='$phone', office='$office', role='$role', pwd='$pwd', estado='$estado' WHERE cid='$cid'";
+		addLog('Update', 'Update data Pegawai ' . $name . ' ', $_SESSION['user_name'], $_SESSION['user_type']);	
 	}
 
 }
@@ -62,5 +63,3 @@ else{
 $con->query($consulta);
 // retornamos un mensaje de confirmación
 echo json_encode(array('msg' => 'ok'));
-
-?>

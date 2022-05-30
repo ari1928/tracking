@@ -59,4 +59,14 @@ function isUser(){
 	}
 	
 }
+
+function addLog($aksi, $info, $user, $role)
+{
+	$ip = $_SERVER['REMOTE_ADDR'];
+	$device = $_SERVER['HTTP_USER_AGENT'];
+	$date = date('Y-m-d H:i:s');
+	$sql = "INSERT INTO log (ip, date, aksi, info, device, user, role)
+			VALUES ('$ip', '$date', '$aksi', '$info', '$device', '$user', '$role')";
+	dbQuery($sql);
+}
 ?>

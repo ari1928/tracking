@@ -2,6 +2,7 @@
 
  
 include('../../database-settings.php');
+require_once('../../library.php');
 // asignamos la función de conexion a una variable
 $con = conexion();
 // recuperamos y asignamos a variables los campos enviados por ajax metodo POST
@@ -40,6 +41,10 @@ elseif(empty($observations)){
 // insertamos en la base de datos - hacemos una consulta SQL
 $consulta = "INSERT INTO mode_bookings (name,services,deliverytime,observations,estado) VALUES('$name','$services','$deliverytime','$observations','$estado')";
 $con->query($consulta); // enviamos la consulta al método query
+
+// add log
+addLog('Create', 'Create Tipe Pengiriman ' . $name . ' ', $_SESSION['user_name'], $_SESSION['user_type']);
+
 // retornamos un mensaje de confirmación
 echo json_encode(array('msg' => 'ok'));
 
