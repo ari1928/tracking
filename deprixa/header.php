@@ -162,14 +162,14 @@ isUser();
                                     <li><a href="customer.php"><i class="fa fa-user-plus"></i>&nbsp;&nbsp;Akun Pelanggan</a></li>
                                 </ul>
                             </li>
-                            <li class="has-submenu">
+                            <!-- <li class="has-submenu">
                                 <a href="#"><i class="fa fa-gear (alias)"></i> <span> PENGATURAN </span> </a>
                                 <ul class="submenu">
                                     <li><a href="service_mode.php"><i class="fa fa-gift"></i>&nbsp;&nbsp;Tipe Produk</a></li>
                                     <li><a href="type-of-shipments.php"><i class="fa fa-truck"></i>&nbsp;&nbsp;Tipe Pengiriman</a></li>
                                     <li><a href="add-office.php"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Lokasi</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                         <?php } ?>
                         <li class="has-submenu">
                             <a href="add-courier.php"><i class="fa fa-cubes"></i> <span> TAMBAH PENGIRIMAN </span> </a>
@@ -193,7 +193,7 @@ isUser();
                             <ul class="submenu">
                                 <li><a href="shipping-list.php"><i class="fa fa-file-text-o"></i>&nbsp;&nbsp;Daftar Pengiriman</a></li>
                                 <li><a href="delivered-list.php"><i class="fa fa-truck"></i>&nbsp;&nbsp;Daftar Pengiriman yang telah Sampai Tujuan</a></li>
-                                <li><a href="delivered-list-online.php"><i class="fa fa-truck"></i>&nbsp;&nbsp;Daftar Pengiriman Online yang telah diterima</a></li>
+                                <!-- <li><a href="delivered-list-online.php"><i class="fa fa-truck"></i>&nbsp;&nbsp;Daftar Pengiriman Online yang telah diterima</a></li> -->
                                 <!--<li><a href="list-of-shipping-paid.php"><i class="fa fa-money"></i>&nbsp;&nbsp;Daftar Pengiriman yang telah Dibayar</a></li>
                                 <li><a href="list-of-shipping-topaid.php"><i class="fa fa-credit-card"></i>&nbsp;&nbsp;Daftar Pengiriman yang untuk dibayar</a></li>
                                 <li><a href="list-of-shipping-cash-on-delivery.php"><i class="fa fa-usd"></i>&nbsp;&nbsp;Daftar Pengiriman yang COD/Cash On Delivery</a></li>-->

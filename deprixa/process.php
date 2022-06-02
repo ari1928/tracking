@@ -1,7 +1,6 @@
 <?php
 
 
-session_start();
 require_once('database.php');
 require_once('library.php');
 date_default_timezone_set("Asia/Bangkok");
@@ -382,7 +381,6 @@ function addcourier_update()
 						alert(\"Updates applied successfuly.\");
 						window.location = \"admin.php\"
 					</script>";
-
 } //addcourier_update
 
 
@@ -708,8 +706,24 @@ function changeProfile()
 	$phone = $_POST['phone'];
 	$id = $_POST['id'];
 
+	$temp1 = $_FILES['foto']['tmp_name'];
+	
+	if ($temp1 != '') {
+		$foto = time() . '-' . $_FILES['foto']['name'];
+		$path1 = '../upload/fotouser/' . $foto;
+
+		$foto_old = '../upload/fotouser/' . $_POST['foto_old'];
+		if (file_exists($foto_old)) {
+			unlink('../upload/fotouser/' . $_POST['foto_old']);
+		} else {
+			echo 'file not found';
+		}
+		move_uploaded_file($temp1, $path1);
+	}
+	
+
 	$sql_1 = "UPDATE tbl_clients
-				SET name='$name',password = '$pwd' , phone='$phone', email='$email',address='$add' WHERE id= '$id'";
+				SET name='$name',password = '$pwd' , phone='$phone', email='$email',address='$add',foto='$foto' WHERE id= '$id'";
 	dbQuery($sql_1);
 	echo "<script type=\"text/javascript\">
 						alert(\"Changes applied successfuly\");
@@ -831,7 +845,7 @@ function updateStatus()
 	dbQuery($sql_1);
 
 	// add log
-	addLog('Update', 'Update Status Pengiriman '. $status.' ' . $cons_no . ' ', $_SESSION['user_name'], $_SESSION['user_type']);
+	addLog('Update', 'Update Status Pengiriman ' . $status . ' ' . $cons_no . ' ', $_SESSION['user_name'], $_SESSION['user_type']);
 
 	header("Location: edit-courier.php?cid=$cid");
 } //updateStatus

@@ -6,7 +6,7 @@ session_start();
 require_once('../library.php');
 require_once('../database.php');
 $qname = $_SESSION['user_name'];
- 
+
 if (isset($_POST['cons'])) {
 	$cons = $_POST['cons'];
 	$result1 =  mysql_query("SELECT * FROM courier_online where s_add='$qname' AND cons_no='$cons' ");
@@ -15,10 +15,10 @@ if (isset($_POST['cons'])) {
 	$result1 =  mysql_query("SELECT * FROM courier_online where s_add='$qname' ");
 }
 
-	$getuser =  mysql_query("SELECT * FROM tbl_clients where email='$qname' ");
-	$gettt = mysql_fetch_assoc($getuser);
-	$day = date('d/m/Y');
-	$result_track =  mysql_query("SELECT * FROM courier where ship_name='$gettt[name]' AND schedule >=$day  AND status !='Finished' ");
+$getuser =  mysql_query("SELECT * FROM tbl_clients where email='$qname' ");
+$gettt = mysql_fetch_assoc($getuser);
+$day = date('d/m/Y');
+$result_track =  mysql_query("SELECT * FROM courier where ship_name='$gettt[name]' AND schedule >=$day  AND status !='Finished' ");
 
 isUser();
 ?>
@@ -259,7 +259,7 @@ isUser();
 											$classname = "oddRow";
 									?>
 								<tr>
-									<td><?php echo $row["cons_no"]; ?></td>
+									<td> <a href=""><?php echo $row["cons_no"]; ?></a> </td>
 									<td><?php echo $row["fromcity"]; ?></td>
 									<td><?php echo $row["tocity"]; ?></td>
 									<td><?php echo $row["date"]; ?></td>
@@ -317,12 +317,12 @@ isUser();
 											$classname = "oddRow";
 									?>
 								<tr>
-									<td><?php echo $row["cons_no"]; ?></td>
+									<td> <a href="shipping-detail.php?q=<?= $row['cons_no'] ?>"><?php echo $row["cons_no"]; ?></a> </td>
 									<td><?php echo $row["pol"]; ?></td>
 									<td><?php echo $row["pod"]; ?></td>
 									<td><?php echo $row["pick_date"]; ?></td>
 									<td><?php echo $row["schedule"]; ?></td>
-									<td><span class="label <?php echo $row['status']; ?> label-large"><?php echo $row['status']; ?></span></td>
+									<td><span class="label <?php echo $row['status']; ?> label-large label-success"><?php echo $row['status']; ?></span></td>
 								</tr>
 							<?php } ?>
 

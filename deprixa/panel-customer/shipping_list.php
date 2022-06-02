@@ -164,7 +164,7 @@ isUser();
                                             <a target="_blank" href="../../upload/lampiran/<?php echo $row['lampiran3']; ?>">
                                                 <img src="../images/print.png" border="0" height="20" width="20"></a>
                                         </td>
-                                        <td><?php echo $row["cons_no"]; ?></td>
+                                        <td><a href="shipping-detail.php?q=<?= $row['cons_no'] ?>"><?php echo $row["cons_no"]; ?></a></td>
                                         <td><?php echo $row["pol"]; ?></td>
                                         <td><?php echo $row["pod"]; ?></td>
                                         <td><?php echo $row["pick_date"]; ?></td>
