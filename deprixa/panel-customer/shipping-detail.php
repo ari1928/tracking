@@ -88,9 +88,10 @@ $row = mysql_fetch_assoc($result);
 	<div class="wrapper">
 		<div class="container">
 			<!-- Page-Title -->
-			<?php
+			<!-- <?php
 			include("../icon_settings.php");
-			?><div class="row">
+			?> -->
+			<div class="row">
 				<div class="col-md-12">
 					<h2>Detail Informasi Pengiriman</h2>
 				</div>

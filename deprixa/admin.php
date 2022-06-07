@@ -130,9 +130,9 @@ isUser();
 			<div class="container">
 
 				<!-- Page-Title -->
-				<?php
+				<!-- <?php
 				include("icon_settings.php");
-				?>
+				?> -->
 
 				<!-- star row Administrator-->
 

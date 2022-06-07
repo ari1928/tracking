@@ -87,7 +87,7 @@ isUser();
 <body>
     <?php
     include("header_customer.php");
-    ?>
+    ?> 
 
     <!-- ============================================================== -->
     <!-- Start right Content here -->
@@ -96,9 +96,9 @@ isUser();
         <div class="container">
 
             <!-- Page-Title -->
-            <?php
+          <!--  <?php
             include("../icon_settings.php");
-            ?>
+            ?> -->
             <!-- end row -->
 
             <div class="row">

@@ -23,7 +23,7 @@ isUser();
 	<meta name="author" content="">
 
 	<!-- App Favicon -->
-	<link rel="shortcut icon" href="assets/images/favicon.ico">
+	<link rel="shortcut icon" href="assets/images/Logo_CMT.png">
 
 	<!-- App title -->
 	<title>PT.CITRA MANDIRI TRANS GROUP</title>
@@ -54,13 +54,13 @@ isUser();
 		<div class="container">
 
 			<!-- Page-Title -->
-			<?php
+		<!--	<?php
 			include("../icon_settings.php");
-			?>
+			?> -->
 			<div class="row">
 				<div class="col-sm-12">
-					<div class="card-box table-responsive">
-						<h4 class="m-t-0 header-title"><b><i class="fa fa-gears (alias) icon text-default-lter"></i>&nbsp;&nbsp;Profile Pelanggan</b></h4>
+					<div class="card-box">
+						<h4 class="header-title" style="margin-top: 50px;"><b><i class="fa fa-gears (alias) icon text-default-lter"></i>&nbsp;&nbsp;Profile Pelanggan</b></h4>
 
 						<?php
 						require_once('../database.php');

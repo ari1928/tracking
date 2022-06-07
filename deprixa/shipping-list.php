@@ -55,9 +55,9 @@ isUser();
 		<div class="container">
 
 			<!-- Page-Title -->
-			<?php
+		<!--	<?php
 			include("icon_settings.php");
-			?>
+			?> -->
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="card-box table-responsive">

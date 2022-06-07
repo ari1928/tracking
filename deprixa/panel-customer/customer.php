@@ -97,9 +97,9 @@ isUser();
 		<div class="container">
 
 			<!-- Page-Title -->
-			<?php
-			include("../icon_settings.php");
-			?>
+			<!--	<?php
+					include("../icon_settings.php");
+					?> -->
 			<div class="row">
 				<?php
 				// Always first connect to the database mysql
@@ -126,7 +126,7 @@ isUser();
 					</div>
 				</div>
 
-				<div class="col-xs-12 col-md-6 col-lg-6 col-xl-4">
+				<!--	<div class="col-xs-12 col-md-6 col-lg-6 col-xl-4">
 					<div class="card-box tilebox-one">
 						<i class="icon-paypal pull-xs-right text-muted"></i>
 						<h6 class="text-muted text-uppercase m-b-20">Total Invoice</h6>
@@ -148,28 +148,39 @@ isUser();
 
 							?> </span> <span class="text-muted">Persentase Invoice yang harus dibayar</span>
 					</div>
-				</div>
+				</div>  -->
 
 				<div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
 					<div class="card-box widget-user">
 						<div>
-							<img src="assets/images/users/avatar-2.jpg" class="img-responsive img-circle" alt="user">
 							<?php
-							$result3 = mysql_query("SELECT * FROM tbl_clients WHERE  email='" . $_SESSION["user_name"] . "' ");
-							while ($row = mysql_fetch_array($result3)) {
+							require_once('../database.php');
+							$sql_1 = "SELECT * FROM tbl_clients where email='$qname' LIMIT 1";
+							$result45 = dbQuery($sql_1);
+							while ($data = dbFetchAssoc($result45)) {
+								extract($data);
 							?>
-								<div class="wid-u-info">
-									<h5 class="m-t-20 m-b-5"> <?php echo $row['name']; ?></h5>
-									<p class="text-muted m-b-0 font-13"><?php echo $row['email']; ?></p>
-									<div class="user-position">
-										<span class="text-info font-weight-bold">Pelanggan</span>
+								<?php if ($foto != '') { ?>
+									<img src="../../upload/fotouser/<?= $foto ?>" class="img-responsive img-circle" alt="user">
+								<?php } else { ?>
+									<img src="assets/images/users/avatar-2.jpg" class="img-responsive img-circle" alt="user">
+								<?php } ?>
+								<?php
+								$result3 = mysql_query("SELECT * FROM tbl_clients WHERE  email='" . $_SESSION["user_name"] . "' ");
+								while ($row = mysql_fetch_array($result3)) {
+								?>
+									<div class="wid-u-info">
+										<h5 class="m-t-20 m-b-5"> <?php echo $row['name']; ?></h5>
+										<p class="text-muted m-b-0 font-13"><?php echo $row['email']; ?></p>
+										<div class="user-position">
+											<span class="text-info font-weight-bold">Pelanggan</span>
+										</div>
 									</div>
-								</div>
-							<?php } ?>
+								<?php } ?>
 						</div>
+					<?php } ?>
 					</div>
 				</div>
-
 			</div>
 			<!-- end row -->
 

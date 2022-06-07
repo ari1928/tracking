@@ -72,7 +72,7 @@ isUser();
                 <!-- LOGO -->
                 <div class="topbar-left">
                     <a href="" class="logo">
-                        <span><img src="../images/citra-logo.png"width="23%"></span>
+                        <span><img src="../images/Citra-logo.png" width="50%"></span>
                     </a>
                 </div>
                 <!-- End Logo container-->
@@ -96,7 +96,18 @@ isUser();
 
                         <li class="nav-item dropdown notification-list">
                             <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <img src="assets/images/users/avatar-1.jpg" alt="user" class="img-circle">
+                                <?php
+                                require_once('../database.php');
+                                $sql_1 = "SELECT * FROM tbl_clients where email='$qname' LIMIT 1";
+                                $result45 = dbQuery($sql_1);
+                                while ($data = dbFetchAssoc($result45)) {
+                                    extract($data);
+                                ?>
+                                    <?php if ($foto != '') { ?>
+                                        <img src="../../upload/fotouser/<?= $foto ?>" class="img-responsive img-circle" alt="user">
+                                    <?php } else { ?>
+                                        <img src="assets/images/users/avatar-2.jpg" class="img-responsive img-circle" alt="user">
+                                    <?php } ?>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-arrow profile-dropdown " aria-labelledby="Preview">
                                 <!-- item-->
@@ -115,6 +126,7 @@ isUser();
                                 </a>
 
                             </div>
+                        <?php } ?>
                         </li>
 
                     </ul>
