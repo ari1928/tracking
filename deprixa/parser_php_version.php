@@ -835,3 +835,4 @@ if (!extension_loaded('mysql')) {
 		return $temp;
 	}
 }
+?>
