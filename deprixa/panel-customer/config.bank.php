@@ -54,5 +54,5 @@ public function next_result() {
         $this->connect();
     }
   
-}
+
 ?>
